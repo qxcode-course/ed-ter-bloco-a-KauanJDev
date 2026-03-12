@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-12_19-32-01",
+            "content": "@@ -279,34 +279,24 @@\n rintln(%22S%22)%0A\n-%09%09%09%09break%0A\n %09%09%09%7D else %7B%0A\n@@ -312,34 +312,24 @@\n rintln(%22N%22)%0A\n-%09%09%09%09break%0A\n %09%09%09%7D%0A%09%09%7D%0A%09%7D%0A\n@@ -515,26 +515,16 @@\n ln(%22S%22)%0A\n-%09%09%09%09break%0A\n %09%09%09%7D els\n@@ -552,18 +552,8 @@\n N%22)%0A\n-%09%09%09%09break%0A\n %09%09%09%7D\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-12_19-34-30",
+            "content": "@@ -25,32 +25,8 @@\n t%22%0A%0A\n-const maxPosition = 15%0A%0A\n func\n@@ -182,34 +182,34 @@\n  != helicoptero \n-&&\n+%7C%7C\n  fugitivo != pol\n@@ -249,40 +249,98 @@\n ivo \n-%3E maxPosition %7B%0A%09%09%09%09fugitivo = 0\n+== helicoptero %7B%0A%09%09%09%09fmt.Println(%22S%22)%0A%09%09%09%09break%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Println(%22N%22)%0A%09%09%09%09break\n %0A%09%09%09\n@@ -402,10 +402,10 @@\n ero \n-&&\n+%7C%7C\n  fug\n@@ -478,27 +478,18 @@\n o = \n-maxPosition\n+15\n %0A%09%09%09%7D%0A%09%09\n %7D%0A%09%7D\n@@ -480,29 +480,24 @@\n = 15%0A%09%09%09%7D%0A%09%09\n-%7D%0A%09%7D%0A\n %09if fugitivo\n@@ -514,16 +514,18 @@\n ptero %7B%0A\n+%09%09\n %09%09fmt.Pr\n@@ -535,16 +535,28 @@\n ln(%22S%22)%0A\n+%09%09%09%09break%0A%09%09\n %09%7D else \n@@ -557,16 +557,18 @@\n  else %7B%0A\n+%09%09\n %09%09fmt.Pr\n@@ -578,13 +578,32 @@\n ln(%22N%22)%0A\n+%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A\n %09%7D%0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-12_19-46-05",
+            "content": "package main\n\nimport \"fmt\"\n\nconst maxPosition = 15\n\nfunc main() {\n\tvar helicoptero, policial, fugitivo, direcao int\n\tfmt.Scan(&helicoptero, &policial, &fugitivo, &direcao)\n\tif direcao == 1 {\n\t\tfor fugitivo != helicoptero && fugitivo != policial {\n\t\t\tfugitivo++\n\t\t\tif fugitivo > maxPosition {\n\t\t\t\tfugitivo = 0\n\t\t\t}\n\t\t}\n\t}\n\tif direcao == -1 {\n\t\tfor fugitivo != helicoptero && fugitivo != policial {\n\t\t\tfugitivo--\n\t\t\tif fugitivo < 0 {\n\t\t\t\tfugitivo = maxPosition\n\t\t\t}\n\t\t}\n\t}\n\tif fugitivo == helicoptero {\n\t\tfmt.Println(\"S\")\n\t} else {\n\t\tfmt.Println(\"N\")\n\t}\n}\n",
+            "lines": "31"
+        }
+    ]
+}

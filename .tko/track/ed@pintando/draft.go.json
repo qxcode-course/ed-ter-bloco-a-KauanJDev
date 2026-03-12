@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_17-38-55",
+            "content": "@@ -61,23 +61,19 @@\n x, y, z \n-float64\n+int\n %0A%0A%09fmt.S\n@@ -128,23 +128,19 @@\n rimetro \n-float64\n+int\n  = (x + \n@@ -153,10 +153,8 @@\n  / 2\n-.0\n %0A%09va\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-11_17-40-58",
+            "content": "@@ -83,31 +83,42 @@\n Scan\n-f(%22%25f %25f %25f%22, x, y, \n+(&x)%0A%09fmt.Scan(&y)%0A%09fmt.Scan(&\n z)%0A\n+%0A\n %09var\n@@ -157,16 +157,18 @@\n + z) / 2\n+.0\n %0A%09var ar\n@@ -301,10 +301,8 @@\n %25.2f\n-%5Cn\n %22, a\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-11_17-46-18",
+            "content": "@@ -83,18 +83,28 @@\n Scan\n-(&\n+f(%22%25f %25f %25f%22, \n x, \n-&\n y, \n-&\n z)%0A%09\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-03-11_17-47-16",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar x, y, z float64\n\n\tfmt.Scan(&x, &y, &z)\n\tvar semiPerimetro float64 = (x + y + z) / 2\n\tvar area float64 = math.Sqrt(float64(semiPerimetro * (semiPerimetro - x) * (semiPerimetro - y) * (semiPerimetro - z)))\n\tfmt.Printf(\"%.2f\\n\", area)\n}\n",
+            "lines": "15"
+        }
+    ]
+}

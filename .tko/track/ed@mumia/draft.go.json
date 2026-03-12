@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_18-00-23",
+            "content": "@@ -128,22 +128,16 @@\n tf(%22\n-%25s eh \n crianca%22\n , no\n@@ -132,22 +132,16 @@\n crianca%22\n-, nome\n )%0A%09%7D els\n@@ -176,26 +176,14 @@\n tf(%22\n-%25s eh jovem%22, nome\n+jovem%22\n )%0A%09%7D\n@@ -222,27 +222,15 @@\n tf(%22\n-%25s eh \n adulto%22\n-, nome\n )%0A%09%7D\n@@ -271,26 +271,14 @@\n tf(%22\n-%25s eh idoso%22, nome\n+idoso%22\n )%0A%09%7D\n@@ -303,26 +303,14 @@\n tf(%22\n-%25s eh mumia%22, nome\n+mumia%22\n )%0A%09%7D\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-11_18-01-02",
+            "content": "@@ -137,18 +137,16 @@\n  crianca\n-%5Cn\n %22, nome)\n@@ -254,18 +254,16 @@\n h adulto\n-%5Cn\n %22, nome)\n@@ -318,10 +318,8 @@\n doso\n-%5Cn\n %22, n\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-11_18-06-14",
+            "content": "@@ -364,18 +364,16 @@\n eh mumia\n-%5Cn\n %22, nome)\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-11_18-06-29",
+            "content": "@@ -197,18 +197,16 @@\n eh jovem\n-%5Cn\n %22, nome)\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-11_18-06-56",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar nome string\n\tvar idade int\n\tfmt.Scan(&nome, &idade)\n\n\tif idade < 12 {\n\t\tfmt.Printf(\"%s eh crianca\\n\", nome)\n\t} else if idade < 18 {\n\t\tfmt.Printf(\"%s eh jovem\\n\", nome)\n\t} else if idade < 65 {\n\t\tfmt.Printf(\"%s eh adulto\\n\", nome)\n\t} else if idade < 1000 {\n\t\tfmt.Printf(\"%s eh idoso\\n\", nome)\n\t} else {\n\t\tfmt.Printf(\"%s eh mumia\\n\", nome)\n\t}\n}\n",
+            "lines": "21"
+        }
+    ]
+}
