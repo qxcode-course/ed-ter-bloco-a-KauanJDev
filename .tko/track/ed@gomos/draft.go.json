@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-16_16-02-16",
+            "content": "@@ -201,9 +201,9 @@\n se %22\n-D\n+N\n %22:%0A%09\n@@ -227,9 +227,9 @@\n se %22\n-U\n+S\n %22:%0A%09\n@@ -253,9 +253,9 @@\n se %22\n-R\n+L\n %22:%0A%09\n@@ -267,33 +267,33 @@\n icaoX++%0A%09%09case %22\n-L\n+O\n %22:%0A%09%09%09posicaoX--\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-16_16-05-37",
+            "content": "@@ -116,16 +116,38 @@\n &direcao\n+, &posicaoX, &posicaoY\n )%0A%09for i\n@@ -174,41 +174,8 @@\n + %7B%0A\n-%09%09fmt.Scan(&posicaoX, &posicaoY)%0A\n %09%09sw\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-16_16-13-58",
+            "content": "@@ -94,42 +94,8 @@\n ing%0A\n-%09var antX, antY, tempX, tempY int%0A\n %09fmt\n@@ -118,16 +118,16 @@\n irecao)%0A\n+\n %09for i :\n@@ -185,62 +185,8 @@\n oY)%0A\n-%09%09if i == 0 %7B%0A%09%09%09antX = posicaoX%0A%09%09%09antY = posicaoY%0A%0A%09\n %09%09sw\n@@ -202,17 +202,16 @@\n cao %7B%0A%09%09\n-%09\n case %22D%22\n@@ -212,17 +212,16 @@\n se %22D%22:%0A\n-%09\n %09%09%09posic\n@@ -226,17 +226,16 @@\n icaoY++%0A\n-%09\n %09%09case %22\n@@ -237,25 +237,24 @@\n ase %22U%22:%0A%09%09%09\n-%09\n posicaoY--%0A%09\n@@ -254,17 +254,16 @@\n aoY--%0A%09%09\n-%09\n case %22R%22\n@@ -264,17 +264,16 @@\n se %22R%22:%0A\n-%09\n %09%09%09posic\n@@ -280,17 +280,16 @@\n aoX++%0A%09%09\n-%09\n case %22L%22\n@@ -290,17 +290,16 @@\n se %22L%22:%0A\n-%09\n %09%09%09posic\n@@ -308,139 +308,12 @@\n X--%0A\n-%09\n %09%09%7D%0A\n-%09%09%7D else %7B%0A%09%09%09tempX = posicaoX%0A%09%09%09tempY = posicaoY%0A%09%09%09posicaoX = antX%0A%09%09%09posicaoY = antY%0A%09%09%09antX = tempX%0A%09%09%09antY = tempY%0A%09%09%7D%0A%0A\n %09%09fm\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-16_16-18-04",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar gomos, posicaoX, posicaoY int\n\tvar direcao string\n\tvar antX, antY, tempX, tempY int\n\tfmt.Scan(&gomos, &direcao)\n\tfor i := 0; i < gomos; i++ {\n\t\tfmt.Scan(&posicaoX, &posicaoY)\n\t\tif i == 0 {\n\t\t\tantX = posicaoX\n\t\t\tantY = posicaoY\n\n\t\t\tswitch direcao {\n\t\t\tcase \"D\":\n\t\t\t\tposicaoY++\n\t\t\tcase \"U\":\n\t\t\t\tposicaoY--\n\t\t\tcase \"R\":\n\t\t\t\tposicaoX++\n\t\t\tcase \"L\":\n\t\t\t\tposicaoX--\n\t\t\t}\n\t\t} else {\n\t\t\ttempX = posicaoX\n\t\t\ttempY = posicaoY\n\t\t\tposicaoX = antX\n\t\t\tposicaoY = antY\n\t\t\tantX = tempX\n\t\t\tantY = tempY\n\t\t}\n\n\t\tfmt.Printf(\"%d %d\\n\", posicaoX, posicaoY)\n\t}\n}\n",
+            "lines": "37"
+        }
+    ]
+}

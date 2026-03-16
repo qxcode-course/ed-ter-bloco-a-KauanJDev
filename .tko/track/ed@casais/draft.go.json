@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_08-16-47",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,323 +37,12 @@\n ) %7B%0A\n-%09var animaisTotal int%0A%09var casaisTotal int%0A%09fmt.Scan(&animaisTotal)%0A%09animais := make(%5B%5Dint, animaisTotal)%0A%09for i := 0; i %3C animaisTotal; i++ %7B%0A%09%09fmt.Scan(&animais%5Bi%5D)%0A%09%7D%0A%09for i := 0; i %3C animaisTotal; i++ %7B%0A%09%09for j := i + 1; j %3C animaisTotal; j++ %7B%0A%09%09%09if animais%5Bi%5D+animais%5Bj%5D == 0 %7B%0A%09%09%09%09casaisTotal++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09\n+    \n fmt.\n@@ -53,19 +53,16 @@\n tln(\n-casaisTotal\n+%22qxcode%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-13_18-38-07",
+            "content": "@@ -341,21 +341,8 @@\n l++%0A\n-%09%09%09%09continue%0A\n %09%09%09%7D\n@@ -346,17 +346,16 @@\n %09%09%7D%0A%09%09%7D%0A\n-%0A\n %09%7D%0A%09fmt.\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-16_14-43-06",
+            "content": "@@ -345,13 +345,16 @@\n %09%09%09%09\n-break\n+continue\n %0A%09%09%09\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-16_14-43-31",
+            "content": "@@ -341,50 +341,8 @@\n l++%0A\n-%09%09%09%09animais%5Bi%5D = 999%0A%09%09%09%09animais%5Bj%5D = 999%0A\n %09%09%09%09\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-16_14-49-19",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar animaisTotal int\n\tvar casaisTotal int\n\tfmt.Scan(&animaisTotal)\n\tanimais := make([]int, animaisTotal)\n\tfor i := 0; i < animaisTotal; i++ {\n\t\tfmt.Scan(&animais[i])\n\t}\n\tfor i := 0; i < animaisTotal; i++ {\n\t\tfor j := i + 1; j < animaisTotal; j++ {\n\t\t\tif animais[i]+animais[j] == 0 {\n\t\t\t\tcasaisTotal++\n\t\t\t\tanimais[i] = 999\n\t\t\t\tanimais[j] = 999\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\n\t}\n\tfmt.Println(casaisTotal)\n}\n",
+            "lines": "25"
+        }
+    ]
+}
