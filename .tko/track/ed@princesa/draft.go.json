@@ -1,0 +1,94 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-23_20-53-09",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,209 +37,32 @@\n ) %7B%0A\n-%09var N, E int%0A%09fmt.Scan(&N, &E)%0A%09pessoas := make(%5B%5Dstring, N)%0A%09for i := 0; i %3C N; i++ %7B%0A%09%09pessoas%5Bi%5D = fmt.Sprint(i)%0A%09%7D%0A%09for i := 0; i %3C N; i++ %7B%0A%09%09if i == E %7B%0A%09%09%09pessoas%5Bi%5D = fmt.Sprint(i) + %22%3E%22%0A%09%09%7D%0A%09%7D\n+    fmt.Println(%22qxcode%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-24_10-50-32",
+            "content": "@@ -71,16 +71,15 @@\n &E)%0A\n-%0A%09numero\n+%09pessoa\n s :=\n@@ -90,35 +90,19 @@\n e(%5B%5D\n+str\n in\n-t\n+g\n , N\n-+2\n )%0A\n-%09var espada int%0A%0A\n %09for\n@@ -99,39 +99,38 @@\n g, N)%0A%09for i := \n-1\n+0\n ; i %3C\n-=\n  N; i++ %7B%0A%09%09nume\n@@ -129,127 +129,38 @@\n %7B%0A%09%09\n-numeros%5Bi%5D = i%0A%09%09if numeros%5Bi%5D == E %7B%0A%09%09%09espada = i%0A%09%09%7D%0A%09%7D%0A%09for j := 1; j %3C= N; j++ %7B%0A%09%09\n+pessoas%5Bi%5D = \n fmt.\n-P\n+Sp\n rint\n-f(%22%25d %22, numeros%5Bj%5D\n+(i\n )%0A%09\n+%7D%0A\n %09for\n@@ -169,15 +169,14 @@\n  := \n-1\n+0\n ; i %3C\n-=\n  N; \n@@ -187,17 +187,16 @@\n %7B%0A%09%09\n-%09\n if i == \n espa\n@@ -195,76 +195,52 @@\n  == \n-espada && i %3C N %7B%0A%09%09%09%09numero\n+E %7B%0A%09%09%09pessoa\n s%5Bi\n-+1\n %5D = \n-0%0A%09%09%09%09espada = i + 1%0A%09%09%09%7D\n+fmt.Sprint(i) + %22%3E%22\n %0A%09%09%7D%0A\n-%0A\n %09%7D%0A%7D\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-24_19-40-03",
+            "content": "@@ -25,535 +25,8 @@\n t%22%0A%0A\n-func printNumeros(numeros %5B%5Dint, N int, E int) %7B%0A%09fmt.Print(%22%5B%22)%0A%09for i := 1; i %3C= N; i++ %7B%0A%09%09if numeros%5Bi%5D == 0 %7B%0A%09%09%09continue%0A%09%09%7D%0A%0A%09%09if i == E %7B%0A%09%09%09fmt.Printf(%22%25d%3E %22, numeros%5Bi%5D)%0A%09%09%7D%0A%09%09fmt.Printf(%22%25d %22, numeros%5Bi%5D)%0A%09%7D%0A%09fmt.Print(%22%5D%5Cn%22)%0A%7D%0A%0Afunc proximo(numeros %5B%5Dint, N int, atual int) int %7B%0A%09for i := atual + 1; i %3C= N; i++ %7B%0A%09%09if numeros%5Bi%5D != 0 %7B%0A%09%09%09return i%0A%09%09%7D%0A%09%7D%0A%09return -1%0A%7D%0A%0Afunc validos(numeros %5B%5Dint, N int) int %7B%0A%09validos := 0%0A%09for i := 1; i %3C= N; i++ %7B%0A%09%09if numeros%5Bi%5D != 0 %7B%0A%09%09%09validos++%0A%09%09%7D%0A%09%7D%0A%09return validos%0A%7D%0A%0A\n func\n@@ -94,17 +94,17 @@\n %5Dint, N+\n-1\n+2\n )%0A%09var e\n@@ -163,17 +163,26 @@\n  i%0A%09%09if \n-i\n+numeros%5Bi%5D\n  == E %7B%0A\n@@ -211,173 +211,169 @@\n for \n-validos(numeros, N) %3E 0 %7B%0A%09%09printNumeros(numeros, N, E)%0A%09%09espada = proximo(numeros, N, espada)%0A%09%09fmt.Printf(%22Espada: %25d%5Cn%22, espada)%0A%09%09if espada == -1 %7B%0A%09%09%09break\n+j := 1; j %3C= N; j++ %7B%0A%09%09fmt.Printf(%22%25d %22, numeros%5Bj%5D)%0A%09%09for i := 1; i %3C= N; i++ %7B%0A%09%09%09if i == espada && i %3C N %7B%0A%09%09%09%09numeros%5Bi+1%5D = 0%0A%09%09%09%09espada = i + 1%0A%09%09%09%7D\n %0A%09%09%7D%0A\n+%0A\n %09%7D%0A%7D\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-24_19-52-38",
+            "content": "@@ -787,68 +787,15 @@\n )%0A%09%09\n-if validos(numeros, N) == 1 %7B%0A%09%09%09break%0A%09%09%7D%0A%09%09proximoE\n+e\n spada \n-:\n = pr\n@@ -826,133 +826,75 @@\n )%0A%09%09\n-if proximoEspada == -1 %7B%0A%09%09%09proximoEspada = proximo(numeros, N, 0)%0A%09%09%7D%0A%09%09numeros%5BproximoEspada%5D = 0%0A%09%09espada = proximoEspada%0A\n+fmt.Printf(%22Espada: %25d%5Cn%22, espada)%0A%09%09if espada == -1 %7B%0A%09%09%09break%0A%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-24_19-55-35",
+            "content": "@@ -835,19 +835,22 @@\n %09proximo\n-Idx\n+Espada\n  := prox\n@@ -879,47 +879,50 @@\n )%0A%09%09\n-numeros%5BproximoIdx%5D = 0%0A%0A%09%09nova\n+if proximoEspada == -1 %7B%0A%09%09%09proximo\n Espada \n-:\n = pr\n@@ -943,19 +943,43 @@\n  N, \n-proximoIdx)\n+0)%0A%09%09%7D%0A%09%09numeros%5BproximoEspada%5D = 0\n %0A%09%09e\n@@ -990,12 +990,15 @@\n a = \n-nova\n+proximo\n Espa\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-03-24_19-57-00",
+            "content": "@@ -625,9 +625,9 @@\n , N+\n-2\n+1\n )%0A%09v\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-03-24_19-57-13",
+            "content": "@@ -621,17 +621,17 @@\n %5Dint, N+\n-1\n+2\n )%0A%09var e\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-03-24_20-07-07",
+            "content": "@@ -154,34 +154,25 @@\n e%0A%09%09%7D%0A%0A%09%09if \n-numeros%5Bi%5D\n+i\n  == E %7B%0A%09%09%09f\n@@ -186,12 +186,11 @@\n tf(%22\n-(\n %25d\n-)\n+%3E\n  %22, \n@@ -208,17 +208,9 @@\n %0A%09%09%7D\n- else %7B%0A%09\n+%0A\n %09%09fm\n@@ -237,20 +237,16 @@\n ros%5Bi%5D)%0A\n-%09%09%7D%0A\n %09%7D%0A%09fmt.\n@@ -394,77 +394,8 @@\n %0A%09%7D%0A\n-%09for i := 1; i %3C= N; i++ %7B%0A%09%09if numeros%5Bi%5D != 0 %7B%0A%09%09%09return i%0A%09%09%7D%0A%09%7D%0A\n %09ret\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-03-24_20-10-54",
+            "content": "@@ -195,11 +195,12 @@\n tf(%22\n+(\n %25d\n-%3E\n+)\n  %22, \n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-03-24_20-11-18",
+            "content": "@@ -191,17 +191,16 @@\n Printf(%22\n- \n %25d%3E %22, n\n@@ -236,17 +236,16 @@\n Printf(%22\n- \n %25d %22, nu\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-03-24_20-11-32",
+            "content": "@@ -195,16 +195,17 @@\n tf(%22 %25d%3E\n+ \n %22, numer\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-03-24_20-11-54",
+            "content": "@@ -83,17 +83,16 @@\n Print(%22%5B\n- \n %22)%0A%09for \n@@ -195,12 +195,12 @@\n tf(%22\n+ \n %25d%3E\n- \n %22, n\n@@ -236,16 +236,17 @@\n Printf(%22\n+ \n %25d %22, nu\n@@ -274,17 +274,16 @@\n .Print(%22\n- \n %5D%5Cn%22)%0A%7D%0A\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-03-24_20-13-17",
+            "content": "@@ -274,16 +274,17 @@\n .Print(%22\n+ \n %5D%5Cn%22)%0A%7D%0A\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-03-24_20-13-29",
+            "content": "@@ -990,23 +990,28 @@\n  = 0%0A%0A%09%09\n-e\n+novaE\n spada \n+:\n = proxim\n@@ -1035,15 +1035,37 @@\n ximoIdx)\n+%0A%09%09espada = novaEspada\n %0A%0A%09%7D%0A%7D%0A\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-03-24_20-15-53",
+            "content": "@@ -1019,22 +1019,26 @@\n ros, N, \n-espada\n+proximoIdx\n )%0A%0A%09%7D%0A%7D%0A\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-03-24_20-16-31",
+            "content": "@@ -1019,26 +1019,22 @@\n ros, N, \n-proximoIdx\n+espada\n )%0A%0A%09%7D%0A%7D%0A\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-03-24_20-19-35",
+            "content": "@@ -865,30 +865,25 @@\n numeros, N, \n-espada\n+E\n )%0A%09%09if valid\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-03-24_20-20-43",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc printNumeros(numeros []int, N int, E int) {\n\tfmt.Print(\"[ \")\n\tfor i := 1; i <= N; i++ {\n\t\tif numeros[i] == 0 {\n\t\t\tcontinue\n\t\t}\n\n\t\tif numeros[i] == E {\n\t\t\tfmt.Printf(\"%d> \", numeros[i])\n\t\t} else {\n\t\t\tfmt.Printf(\"%d \", numeros[i])\n\t\t}\n\t}\n\tfmt.Print(\"]\\n\")\n}\n\nfunc proximo(numeros []int, N int, atual int) int {\n\tfor i := atual + 1; i <= N; i++ {\n\t\tif numeros[i] != 0 {\n\t\t\treturn i\n\t\t}\n\t}\n\tfor i := 1; i <= N; i++ {\n\t\tif numeros[i] != 0 {\n\t\t\treturn i\n\t\t}\n\t}\n\treturn -1\n}\n\nfunc validos(numeros []int, N int) int {\n\tvalidos := 0\n\tfor i := 1; i <= N; i++ {\n\t\tif numeros[i] != 0 {\n\t\t\tvalidos++\n\t\t}\n\t}\n\treturn validos\n}\n\nfunc main() {\n\tvar N, E int\n\tfmt.Scan(&N, &E)\n\n\tnumeros := make([]int, N+1)\n\tvar espada int\n\n\tfor i := 1; i <= N; i++ {\n\t\tnumeros[i] = i\n\t\tif i == E {\n\t\t\tespada = i\n\t\t}\n\t}\n\tfor validos(numeros, N) > 0 {\n\t\tprintNumeros(numeros, N, espada)\n\t\tif validos(numeros, N) == 1 {\n\t\t\tbreak\n\t\t}\n\t\tproximoIdx := proximo(numeros, N, espada)\n\t\tnumeros[proximoIdx] = 0\n\n\t\tespada = proximo(numeros, N, proximoIdx)\n\n\t}\n}\n",
+            "lines": "69"
+        }
+    ]
+}
