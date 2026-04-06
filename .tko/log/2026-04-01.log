@@ -1,0 +1,13 @@
+2026-04-01 10:15:12, SELF, v:1, k:ed@triangulo, self:1, study:20
+2026-04-01 10:15:20, MOVE, v:1, k:ed@treinando, mode:DOWN
+2026-04-01 10:15:22, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-04-01 10:36:47, MOVE, v:1, k:ed@treinando, mode:BACK
+2026-04-01 10:37:58, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-04-01 20:30:53, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-04-01 20:30:55, EXEC, v:1, k:ed@treinando, mode:FULL, rate:0, size:130
+2026-04-01 20:34:03, EXEC, v:1, k:ed@treinando, mode:FULL, rate:16, size:130
+2026-04-01 20:34:16, EXEC, v:1, k:ed@treinando, mode:FULL, rate:33, size:130
+2026-04-01 20:35:05, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:130
+2026-04-01 20:35:49, EXEC, v:1, k:ed@treinando, mode:FULL, rate:66, size:130
+2026-04-01 20:36:16, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:130
+2026-04-01 20:37:01, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100, size:130

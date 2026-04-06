@@ -1,0 +1,119 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-02_16-28-30",
+            "content": "@@ -30,54 +30,23 @@\n unc \n-calcularResto(n int, restos %5B%5Dint, divisoes %5B%5D\n+restoDivisao(n \n int)\n@@ -78,17 +78,9 @@\n urn \n-restos%5B0%5D\n+0\n %0A%09%7D%0A\n@@ -91,203 +91,32 @@\n urn \n-calcularResto(n-1, restos, divisoes) %25 divisoes%5Bn-2%5D%0A%7D%0A%0Afunc restoDivisao(n int) (int, int) %7B%0A%09restos := make(%5B%5Dint, n)%0A%09divisoes := make(%5B%5Dint, n-1)%0A%09return calcularResto(n, restos, divisoes), 0\n+n%252 + restoDivisao(n-1)%0A\n %0A%7D%0A%0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-04-02_16-41-26",
+            "content": "@@ -320,29 +320,17 @@\n isoes), \n-divisoes%5Bn-2%5D\n+0\n %0A%7D%0A%0Afunc\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-02_16-41-45",
+            "content": "@@ -169,9 +169,21 @@\n ) %25 \n-2\n+divisoes%5Bn-2%5D\n %0A%7D%0A%0A\n@@ -320,17 +320,29 @@\n isoes), \n-0\n+divisoes%5Bn-2%5D\n %0A%7D%0A%0Afunc\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-02_16-43-04",
+            "content": "@@ -38,143 +38,8 @@\n ular\n-Divisoes(n int, divisoes %5B%5Dint) int %7B%0A%09if n == 1 %7B%0A%09%09return divisoes%5B0%5D%0A%09%7D%0A%09return calcularDivisoes(n-1, divisoes) / 2%0A%7D%0A%0Afunc calcular\n Rest\n@@ -52,16 +52,32 @@\n t, resto\n+s %5B%5Dint, divisoe\n s %5B%5Dint)\n@@ -151,16 +151,26 @@\n , restos\n+, divisoes\n ) %25 2%0A%7D%0A\n@@ -234,16 +234,46 @@\n int, n)%0A\n+%09divisoes := make(%5B%5Dint, n-1)%0A\n %09return \n@@ -299,38 +299,22 @@\n stos\n-)\n , \n-calcularDivisoes(n, restos)\n+divisoes), 0\n %0A%7D%0A%0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-02_16-46-56",
+            "content": "@@ -44,31 +44,45 @@\n visoes(n int\n-)\n+, divisoes\n  %5B%5Dint\n+) int\n  %7B%0A%09if n == \n@@ -73,33 +73,33 @@\n  int %7B%0A%09if n == \n-0\n+1\n  %7B%0A%09%09return %5B%5Din\n@@ -98,110 +98,66 @@\n urn \n-%5B%5Dint%7B1%7D%0A%09%7D%0A%09divisoes := calcularDivisoes(n - 1)%0A%09return append(divisoes, divisoes%5Blen(divisoes)-1%5D/2)\n+divisoes%5B0%5D%0A%09%7D%0A%09return calcularDivisoes(n-1, divisoes) / 2\n %0A%7D%0A%0A\n@@ -184,15 +184,27 @@\n  int\n-)\n+, restos\n  %5B%5Dint\n+) int\n  %7B%0A%09\n@@ -211,17 +211,17 @@\n if n == \n-0\n+1\n  %7B%0A%09%09ret\n@@ -228,150 +228,205 @@\n urn \n-%5B%5Dint%7B0%7D%0A%09%7D%0A%09restos := calcularResto(n - 1)%0A%09return append(restos, restos%5Blen(restos)-1%5D%252)%0A%7D%0A%0Afunc main() %7B%0A%09fmt.Println(calcularDivisoes(5))\n+restos%5B0%5D%0A%09%7D%0A%09return calcularResto(n-1, restos) %25 2%0A%7D%0A%0Afunc restoDivisao(n int) (int, int) %7B%0A%09restos := make(%5B%5Dint, n)%0A%09return calcularResto(n, restos), calcularDivisoes(n, restos)%0A%7D%0A%0Afunc main() %7B\n %0A%09fm\n@@ -435,28 +435,27 @@\n Println(\n-calcularRest\n+restoDivisa\n o(5))%0A%7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-02_16-52-03",
+            "content": "@@ -59,33 +59,33 @@\n %5Dint %7B%0A%09if n == \n-1\n+0\n  %7B%0A%09%09return %5B%5Din\n@@ -229,17 +229,17 @@\n if n == \n-1\n+0\n  %7B%0A%09%09ret\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-02_16-52-51",
+            "content": "@@ -124,19 +124,19 @@\n isoes(n \n-/ 2\n+- 1\n )%0A%09retur\n@@ -285,11 +285,11 @@\n o(n \n-/ 2\n+- 1\n )%0A%09r\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-02_16-53-57",
+            "content": "@@ -154,17 +154,43 @@\n visoes, \n-n\n+divisoes%5Blen(divisoes)-1%5D/2\n )%0A%7D%0A%0Afun\n@@ -229,17 +229,17 @@\n if n == \n-0\n+1\n  %7B%0A%09%09ret\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-02_16-56-13",
+            "content": "@@ -283,17 +283,37 @@\n restos, \n-n\n+restos%5Blen(restos)-1%5D\n %252)%0A%7D%0A%0Af\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-02_16-57-19",
+            "content": "@@ -195,33 +195,33 @@\n %5Dint %7B%0A%09if n == \n-1\n+0\n  %7B%0A%09%09return %5B%5Din\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-02_16-57-40",
+            "content": "@@ -218,25 +218,25 @@\n eturn %5B%5Dint%7B\n-1\n+0\n %7D%0A%09%7D%0A%09restos\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-02_16-57-50",
+            "content": "@@ -67,17 +67,17 @@\n if n == \n-0\n+1\n  %7B%0A%09%09ret\n@@ -90,9 +90,9 @@\n int%7B\n-0\n+1\n %7D%0A%09%7D\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-02_16-58-14",
+            "content": "@@ -155,20 +155,18 @@\n isoes, n\n--1\n )%0A\n+\n %7D%0A%0Afunc \n@@ -195,33 +195,33 @@\n %5Dint %7B%0A%09if n == \n-0\n+1\n  %7B%0A%09%09return %5B%5Din\n@@ -218,25 +218,25 @@\n eturn %5B%5Dint%7B\n-0\n+1\n %7D%0A%09%7D%0A%09restos\n@@ -252,32 +252,32 @@\n larResto(n / 2)%0A\n+\n %09return append(r\n@@ -290,10 +290,8 @@\n  n%252\n--1\n )%0A%7D%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-02_16-59-32",
+            "content": "@@ -155,16 +155,18 @@\n isoes, n\n+-1\n )%0A%7D%0A%0Afun\n@@ -205,17 +205,17 @@\n if n == \n-1\n+0\n  %7B%0A%09%09ret\n@@ -288,16 +288,18 @@\n tos, n%252\n+-1\n )%0A%7D%0A%0Afun\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-02_17-01-22",
+            "content": "@@ -259,9 +259,9 @@\n o(n \n-%25\n+/\n  2)%0A\n@@ -280,24 +280,26 @@\n nd(restos, n\n+%252\n )%0A%7D%0A%0Afunc ma\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-02_17-04-15",
+            "content": "@@ -232,26 +232,8 @@\n %0A%09%7D%0A\n-%09divisao := n / 2%0A\n %09res\n@@ -257,15 +257,9 @@\n sto(\n-divisao\n+n\n  %25 2\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-02_17-05-10",
+            "content": "@@ -78,32 +78,33 @@\n %0A%09%09return %5B%5Dint%7B\n+0\n %7D%0A%09%7D%0A%09divisoes :\n@@ -159,10 +159,8 @@\n s, n\n-/2\n )%0A%7D%0A\n@@ -195,33 +195,33 @@\n %5Dint %7B%0A%09if n == \n-0\n+1\n  %7B%0A%09%09return %5B%5Din\n@@ -222,16 +222,17 @@\n n %5B%5Dint%7B\n+0\n %7D%0A%09%7D%0A%09di\n@@ -278,16 +278,20 @@\n (divisao\n+ %25 2\n )%0A%09retur\n@@ -312,10 +312,8 @@\n s, n\n-%252\n )%0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-02_17-06-07",
+            "content": "@@ -329,33 +329,8 @@\n ) %7B%0A\n-%09var n int%0A%09fmt.Scan(&n)%0A\n %09fmt\n@@ -359,12 +359,25 @@\n oes(\n-n), \n+5))%0A%09fmt.Println(\n calc\n@@ -386,14 +386,14 @@\n arResto(\n-n\n+5\n ))%0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-02_17-07-06",
+            "content": "@@ -351,28 +351,28 @@\n an(&n)%0A%09\n-divisoes := \n+fmt.Println(\n calcular\n@@ -382,27 +382,17 @@\n isoes(n)\n-%0A%09restos :=\n+,\n  calcula\n@@ -404,147 +404,8 @@\n o(n)\n-%0A%09for _, d := range divisoes %7B%0A%09%09fmt.Printf(%22%25d %22, d)%0A%09%7D%0A%09fmt.Println()%0A%09for _, r := range restos %7B%0A%09%09fmt.Printf(%22%25d %22, r)%0A%09%7D%0A%09fmt.Println(\n )%0A%7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-02_17-08-03",
+            "content": "@@ -462,53 +462,86 @@\n %22%25d \n-%25d\n %22, d\n-, restos%5B0%5D)%0A%09%09restos = restos%5B1:%5D\n+)%0A%09%7D%0A%09fmt.Println()%0A%09for _, r := range restos %7B%0A%09%09fmt.Printf(%22%25d %22, r)\n %0A%09%7D%0A\n-%0A\n %09fmt\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-02_17-08-59",
+            "content": "@@ -503,10 +503,25 @@\n 1:%5D%0A%09%7D%0A%0A\n+%09fmt.Println()%0A\n %7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-02_17-09-15",
+            "content": "@@ -464,10 +464,8 @@\n d %25d\n-%5Cn\n %22, d\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-02_17-09-36",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc calcularDivisoes(n int) []int {\n\tif n == 0 {\n\t\treturn []int{}\n\t}\n\tdivisoes := calcularDivisoes(n / 2)\n\treturn append(divisoes, n/2)\n}\n\nfunc calcularResto(n int) []int {\n\tif n == 0 {\n\t\treturn []int{}\n\t}\n\tdivisao := n / 2\n\trestos := calcularResto(divisao)\n\treturn append(restos, n%2)\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tdivisoes := calcularDivisoes(n)\n\trestos := calcularResto(n)\n\tfor _, d := range divisoes {\n\t\tfmt.Printf(\"%d %d\\n\", d, restos[0])\n\t\trestos = restos[1:]\n\t}\n\n}\n",
+            "lines": "32"
+        }
+    ]
+}
