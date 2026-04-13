@@ -1,0 +1,30 @@
+package main
+
+import (
+	"fmt"
+)
+
+func gelo(pen *Pen, linha float64) {
+	if linha < 2 {
+		return
+	}
+	pen.SetRGB(0, 0, 0)
+	for i := 0; i < 5; i++ {
+		pen.Right(72)
+		pen.Walk(linha)
+		gelo(pen, linha/3)
+		pen.Walk(-linha)
+	}
+
+}
+
+func main() {
+	pen := NewPen(500, 800)
+	pen.Up()
+	pen.SetHeading(90)
+	pen.SetPosition(250, 500)
+	pen.Down()
+	gelo(pen, 200)
+	pen.SavePNG("gelo.png")
+	fmt.Printf("salvou")
+}

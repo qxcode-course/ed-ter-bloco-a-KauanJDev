@@ -1,0 +1,83 @@
+package main
+
+import (
+	"fmt"
+)
+
+func quadrado(pen *Pen, lado float64) {
+	if lado < 4 {
+		return
+	}
+
+	pen.SetRGB(0, 0, 0)
+	pen.DrawRect(lado, lado)
+
+	sub := lado / 2
+	sub2 := sub / 2
+
+	pen.Up()
+	pen.SetHeading(180)
+	pen.Walk(sub2)
+	pen.SetHeading(90)
+	pen.Walk(sub2)
+	pen.Down()
+	quadrado(pen, sub)
+
+	pen.Up()
+	pen.SetHeading(270)
+	pen.Walk(sub2)
+	pen.SetHeading(0)
+	pen.Walk(sub2)
+
+	pen.SetHeading(0)
+	pen.Walk(lado - sub2)
+	pen.SetHeading(90)
+	pen.Walk(sub2)
+	pen.Down()
+	quadrado(pen, sub)
+
+	pen.Up()
+	pen.SetHeading(270)
+	pen.Walk(sub2)
+	pen.SetHeading(180)
+	pen.Walk(lado - sub2)
+
+	pen.SetHeading(180)
+	pen.Walk(sub2)
+	pen.SetHeading(270)
+	pen.Walk(lado - sub2)
+	pen.Down()
+	quadrado(pen, sub)
+
+	pen.Up()
+	pen.SetHeading(90)
+	pen.Walk(lado - sub2)
+	pen.SetHeading(0)
+	pen.Walk(sub2)
+
+	pen.SetHeading(0)
+	pen.Walk(lado - sub2)
+	pen.SetHeading(270)
+	pen.Walk(lado - sub2)
+	pen.Down()
+	quadrado(pen, sub)
+
+	pen.Up()
+	pen.SetHeading(90)
+	pen.Walk(lado - sub2)
+	pen.SetHeading(180)
+	pen.Walk(lado - sub2)
+	pen.Down()
+
+}
+
+func main() {
+	pen := NewPen(500, 800)
+	pen.Up()
+	pen.SetHeading(90)
+	pen.SetPosition(250, 500)
+	pen.Down()
+	quadrado(pen, 200)
+	pen.SavePNG("quadrado.png")
+	fmt.Printf("salvou")
+}

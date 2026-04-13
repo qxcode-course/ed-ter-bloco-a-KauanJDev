@@ -1,0 +1,31 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func ri(inf, sup int) float64 {
+	return float64(rand.Intn(sup-inf+1) + inf)
+}
+
+func espiral(pen *Pen, linha float64) {
+	if linha < 2 {
+		return
+	}
+	pen.SetRGB(ri(0, 255), ri(0, 255), ri(0, 255))
+	pen.Walk(linha)
+	pen.Right(90)
+	espiral(pen, linha-10)
+}
+
+func main() {
+	pen := NewPen(500, 800)
+	pen.Up()
+	pen.SetHeading(90)
+	pen.SetPosition(250, 500)
+	pen.Down()
+	espiral(pen, 200)
+	pen.SavePNG("espiral.png")
+	fmt.Printf("salvou")
+}

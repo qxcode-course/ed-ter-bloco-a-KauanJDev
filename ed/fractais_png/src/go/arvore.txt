@@ -1,0 +1,40 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func ri(inf, sup int) float64 {
+	return float64(rand.Intn(sup-inf+1) + inf)
+}
+
+func arvore(pen *Pen, distancia float64) {
+	if distancia < 10 {
+		return
+	}
+
+	ang_dir := ri(10, 40)
+	ang_esq := ri(10, 40)
+
+	pen.SetRGB(0, 0, 0)
+	pen.Walk(distancia)
+	pen.Right(ang_dir)
+	arvore(pen, distancia*(ri(80, 85)/100))
+	pen.Left(ang_dir + ang_esq)
+	arvore(pen, distancia*(ri(80, 85)/100))
+	pen.Right(ang_esq)
+	pen.Walk(-distancia)
+
+}
+
+func main() {
+	pen := NewPen(500, 800)
+	pen.Up()
+	pen.SetHeading(90)
+	pen.SetPosition(250, 800)
+	pen.Down()
+	arvore(pen, 200)
+	pen.SavePNG("arvore.png")
+	fmt.Printf("salvou")
+}

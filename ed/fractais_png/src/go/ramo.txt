@@ -1,0 +1,69 @@
+package main
+
+import (
+	"fmt"
+)
+
+func ramo(pen *Pen, linha float64) {
+	if linha < 2 {
+		return
+	}
+
+	quarto := linha / 4
+
+	pen.Walk(linha)
+	pen.Up()
+	pen.Walk(-linha)
+	pen.Walk(quarto)
+	pen.Right(60)
+	pen.Down()
+	ramo(pen, quarto)
+	pen.Left(120)
+	ramo(pen, quarto)
+
+	pen.Right(60)
+	pen.Walk(-quarto)
+	pen.Up()
+	pen.Walk(quarto * 2)
+	pen.Right(60)
+	pen.Down()
+	ramo(pen, quarto)
+	pen.Left(120)
+	ramo(pen, quarto)
+
+	pen.Right(60)
+	pen.Walk(-quarto * 2)
+	pen.Up()
+	pen.Walk(quarto * 3)
+	pen.Right(60)
+	pen.Down()
+	ramo(pen, quarto)
+	pen.Left(120)
+	ramo(pen, quarto)
+
+	pen.Right(60)
+	pen.Walk(-quarto * 3)
+	pen.Up()
+
+	pen.Walk(quarto * 4)
+	pen.Right(60)
+	pen.Down()
+	ramo(pen, quarto)
+	pen.Left(120)
+	ramo(pen, quarto)
+
+	pen.Right(60)
+	pen.Walk(-quarto * 4)
+
+}
+
+func main() {
+	pen := NewPen(500, 800)
+	pen.Up()
+	pen.SetHeading(90)
+	pen.SetPosition(250, 800)
+	pen.Down()
+	ramo(pen, 300)
+	pen.SavePNG("ramo.png")
+	fmt.Printf("salvou")
+}

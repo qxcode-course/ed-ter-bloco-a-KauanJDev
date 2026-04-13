@@ -1,0 +1,90 @@
+package main
+
+import (
+	"fmt"
+)
+
+func carpete(pen *Pen, linha float64) {
+	if linha < 2 {
+		return
+	}
+	sub := linha / 3
+
+	pen.SetRGB(255, 255, 255)
+	pen.FillSquare(linha, linha)
+	pen.SetRGB(0, 0, 0)
+	pen.Up()
+	pen.SetHeading(0)
+	pen.Walk(sub)
+	pen.SetHeading(270)
+	pen.Walk(sub)
+	pen.FillSquare(sub, sub)
+	pen.SetHeading(90)
+	pen.Walk(sub)
+	pen.SetHeading(180)
+	pen.Walk(sub)
+
+	carpete(pen, sub)
+	pen.Up()
+	pen.SetHeading(0)
+	pen.Walk(sub)
+	pen.Down()
+	carpete(pen, sub)
+	pen.Up()
+	pen.SetHeading(0)
+	pen.Walk(sub)
+	pen.Down()
+	carpete(pen, sub)
+
+	pen.Up()
+	pen.SetHeading(180)
+	pen.Walk(sub * 2)
+	pen.SetHeading(270)
+	pen.Walk(sub)
+	pen.Down()
+	carpete(pen, sub)
+
+	pen.Up()
+	pen.SetHeading(0)
+	pen.Walk(sub * 2)
+	pen.Down()
+	carpete(pen, sub)
+
+	pen.Up()
+	pen.SetHeading(180)
+	pen.Walk(sub * 2)
+	pen.SetHeading(270)
+	pen.Walk(sub)
+	pen.Down()
+	carpete(pen, sub)
+
+	pen.Up()
+	pen.SetHeading(0)
+	pen.Walk(sub)
+	pen.Down()
+	carpete(pen, sub)
+
+	pen.Up()
+	pen.SetHeading(0)
+	pen.Walk(sub)
+	pen.Down()
+	carpete(pen, sub)
+
+	pen.Up()
+	pen.SetHeading(180)
+	pen.Walk(sub * 2)
+	pen.SetHeading(90)
+	pen.Walk(sub * 2)
+	pen.Down()
+}
+
+func main() {
+	pen := NewPen(500, 800)
+	pen.Up()
+	pen.SetHeading(90)
+	pen.SetPosition(250, 500)
+	pen.Down()
+	carpete(pen, 200)
+	pen.SavePNG("carpete.png")
+	fmt.Printf("salvou")
+}

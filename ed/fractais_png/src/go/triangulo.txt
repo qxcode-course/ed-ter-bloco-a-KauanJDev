@@ -1,0 +1,57 @@
+package main
+
+import (
+	"fmt"
+)
+
+func triangulo(pen *Pen, lado float64) {
+	if lado < 2 {
+		return
+	}
+
+	metade := lado / 2
+
+	pen.SetRGB(0, 0, 0)
+	for range 3 {
+		pen.Walk(lado)
+		pen.Right(120)
+	}
+
+	triangulo(pen, metade)
+
+	pen.Up()
+	pen.Walk(metade)
+	pen.Down()
+	triangulo(pen, metade)
+
+	pen.Up()
+	pen.Right(180)
+	pen.Walk(metade)
+	pen.Left(180)
+	pen.Down()
+
+	pen.Up()
+	pen.Right(60)
+	pen.Walk(metade)
+	pen.Left(60)
+	pen.Down()
+	triangulo(pen, metade)
+
+	pen.Up()
+	pen.Left(120)
+	pen.Walk(metade)
+	pen.Right(120)
+	pen.Down()
+
+}
+
+func main() {
+	pen := NewPen(500, 800)
+	pen.Up()
+	pen.SetHeading(90)
+	pen.SetPosition(250, 500)
+	pen.Down()
+	triangulo(pen, 200)
+	pen.SavePNG("triangulo.png")
+	fmt.Printf("salvou")
+}
