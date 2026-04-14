@@ -62,8 +62,53 @@
         },
         {
             "label": "2026-04-13_22-56-16",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"sort\"\n)\n\nfunc main() {\n\tvar totalFigurinhas, figurinhasPossuidas int\n\tfmt.Scan(&totalFigurinhas)\n\tfmt.Scan(&figurinhasPossuidas)\n\n\trepetidas := make([]int, 0)\n\tfaltantes := make([]int, 0)\n\tfigurinhas := make([]int, figurinhasPossuidas)\n\tfor i := 0; i < figurinhasPossuidas; i++ {\n\t\tfmt.Scan(&figurinhas[i])\n\t}\n\tsort.Ints(figurinhas)\n\tfor i := 1; i < figurinhasPossuidas; i++ {\n\t\tif i >= 1 && figurinhas[i] == figurinhas[i-1] {\n\t\t\trepetidas = append(repetidas, figurinhas[i])\n\t\t}\n\t}\n\tfor i := 1; i <= totalFigurinhas; i++ {\n\t\tencontrada := false\n\t\tfor j := 0; j < len(figurinhas); j++ {\n\t\t\tif figurinhas[j] == i {\n\t\t\t\tencontrada = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tif !encontrada {\n\t\t\tfaltantes = append(faltantes, i)\n\t\t}\n\t}\n\tif len(repetidas) == 0 {\n\t\tfmt.Printf(\"N\")\n\t} else {\n\t\tfor i := 0; i < len(repetidas); i++ {\n\t\t\tif i == len(repetidas)-1 {\n\t\t\t\tfmt.Printf(\"%d\", repetidas[i])\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tfmt.Printf(\"%d \", repetidas[i])\n\t\t}\n\t}\n\tfmt.Printf(\"\\n\")\n\tif len(faltantes) == 0 {\n\t\tfmt.Printf(\"N\\n\")\n\t} else {\n\t\tfor i := 0; i < len(faltantes); i++ {\n\t\t\tif i == len(faltantes)-1 {\n\t\t\t\tfmt.Printf(\"%d\\n\", faltantes[i])\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tfmt.Printf(\"%d \", faltantes[i])\n\t\t}\n\t}\n}\n",
+            "content": "@@ -27,691 +27,18 @@\n mt%22%0A\n-)%0A%0Afunc main() %7B%0A%09var fig_album, possui int%0A%09fmt.Scan(&fig_album, &possui)%0A%09figurinhas := make(%5B%5Dint, 0, possui)%0A%09for i := range possui %7B%0A%09%09fmt.Scan(&figurinhas%5Bi%5D)%0A%09%7D%0A%09unicos := make(map%5Bint%5Dbool)%0A%09repetidos := make(%5B%5Dint, 0, possui)%0A%0A%09for _, fig := range figurinhas %7B%0A%09%09_, existe := unicos%5Bfig%5D%0A%09%09if existe %7B%0A%09%09%09repetidos = append(repetidos, fig)%0A%09%09%7D else %7B%0A%09%09%09unicos%5Bfig%5D = true%0A%09%09%7D%0A%09%7D%0A%09saida := fmt.Sprintf(%22%25v%22, repetidos)%0A%09fmt.Println(saida%5B1 : len(saida)-1%5D)%0A%0A%09faltantes := make(%5B%5Dint, 0, possui)%0A%09for i := 1; i %3C= fig_album; i++ %7B%0A%09%09if !unicos%5Bi%5D %7B%0A%09%09%09faltantes = append(faltantes, i)%0A%09%09%7D%0A%09%7D%0A%0A%09saida = fmt.Sprintf(%22%25v%22, faltantes)%0A%09fmt.Println(saida%5B1 : len(saida)-1%5D)%0A%0A%7D%0A%0A/*\n+%09%22sort%22%0A)%0A\n %0Afun\n@@ -1201,7 +1201,4 @@\n %7D%0A%7D%0A\n-*/%0A\n",
             "lines": "60"
+        },
+        {
+            "label": "2026-04-14_08-58-42",
+            "content": "@@ -299,22 +299,44 @@\n %7B%0A%09%09\n-if unicos%5Bfig%5D\n+_, existe := unicos%5Bfig%5D%0A%09%09if existe\n  %7B%0A%09\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-04-14_09-02-45",
+            "content": "@@ -497,25 +497,22 @@\n int, 0, \n-fig_album\n+possui\n )%0A%09for i\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-04-14_09-04-20",
+            "content": "@@ -124,16 +124,19 @@\n e(%5B%5Dint,\n+ 0,\n  possui)\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-04-14_09-06-02",
+            "content": "@@ -391,56 +391,8 @@\n %0A%09%7D%0A\n-%09if len(repetidos) == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D%0A\n %09sai\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-04-14_09-07-27",
+            "content": "@@ -424,16 +424,18 @@\n mt.Print\n+ln\n (%22N%22)%0A%09%7D\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-04-14_09-07-45",
+            "content": "@@ -428,33 +428,25 @@\n rint(%22N%22)%0A%09%7D\n- else %7B%0A%09\n+%0A\n %09saida := fm\n@@ -472,17 +472,16 @@\n etidos)%0A\n-%09\n %09fmt.Pri\n@@ -509,19 +509,16 @@\n ida)-1%5D)\n-%0A%09%7D\n %0A%0A%09falta\n@@ -652,70 +652,15 @@\n %09%7D%0A%0A\n-%09if len(faltantes) == 0 %7B%0A%09%09fmt.Print(%22N%22)%0A%09%7D else %7B%0A%09\n %09saida \n-:\n = fm\n@@ -686,17 +686,16 @@\n tantes)%0A\n-%09\n %09fmt.Pri\n@@ -723,19 +723,16 @@\n ida)-1%5D)\n-%0A%09%7D\n %0A%0A%7D%0A%0A/*%0A\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-04-14_09-09-16",
+            "content": "@@ -697,18 +697,16 @@\n mt.Print\n-ln\n (%22N%22)%0A%09%7D\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-04-14_09-09-43",
+            "content": "@@ -416,34 +416,32 @@\n  0 %7B%0A%09%09fmt.Print\n-ln\n (%22N%22)%0A%09%7D else %7B%0A\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-04-14_09-09-55",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar fig_album, possui int\n\tfmt.Scan(&fig_album, &possui)\n\tfigurinhas := make([]int, possui)\n\tfor i := range possui {\n\t\tfmt.Scan(&figurinhas[i])\n\t}\n\tunicos := make(map[int]bool)\n\trepetidos := make([]int, 0, possui)\n\n\tfor _, fig := range figurinhas {\n\t\tif unicos[fig] {\n\t\t\trepetidos = append(repetidos, fig)\n\t\t} else {\n\t\t\tunicos[fig] = true\n\t\t}\n\t}\n\tif len(repetidos) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tsaida := fmt.Sprintf(\"%v\", repetidos)\n\t\tfmt.Println(saida[1 : len(saida)-1])\n\t}\n\n\tfaltantes := make([]int, 0, fig_album)\n\tfor i := 1; i <= fig_album; i++ {\n\t\tif !unicos[i] {\n\t\t\tfaltantes = append(faltantes, i)\n\t\t}\n\t}\n\n\tif len(faltantes) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tsaida := fmt.Sprintf(\"%v\", faltantes)\n\t\tfmt.Println(saida[1 : len(saida)-1])\n\t}\n\n}\n\n/*\nfunc main() {\n\tvar totalFigurinhas, figurinhasPossuidas int\n\tfmt.Scan(&totalFigurinhas)\n\tfmt.Scan(&figurinhasPossuidas)\n\n\trepetidas := make([]int, 0)\n\tfaltantes := make([]int, 0)\n\tfigurinhas := make([]int, figurinhasPossuidas)\n\tfor i := 0; i < figurinhasPossuidas; i++ {\n\t\tfmt.Scan(&figurinhas[i])\n\t}\n\tsort.Ints(figurinhas)\n\tfor i := 1; i < figurinhasPossuidas; i++ {\n\t\tif i >= 1 && figurinhas[i] == figurinhas[i-1] {\n\t\t\trepetidas = append(repetidas, figurinhas[i])\n\t\t}\n\t}\n\tfor i := 1; i <= totalFigurinhas; i++ {\n\t\tencontrada := false\n\t\tfor j := 0; j < len(figurinhas); j++ {\n\t\t\tif figurinhas[j] == i {\n\t\t\t\tencontrada = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tif !encontrada {\n\t\t\tfaltantes = append(faltantes, i)\n\t\t}\n\t}\n\tif len(repetidas) == 0 {\n\t\tfmt.Printf(\"N\")\n\t} else {\n\t\tfor i := 0; i < len(repetidas); i++ {\n\t\t\tif i == len(repetidas)-1 {\n\t\t\t\tfmt.Printf(\"%d\", repetidas[i])\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tfmt.Printf(\"%d \", repetidas[i])\n\t\t}\n\t}\n\tfmt.Printf(\"\\n\")\n\tif len(faltantes) == 0 {\n\t\tfmt.Printf(\"N\\n\")\n\t} else {\n\t\tfor i := 0; i < len(faltantes); i++ {\n\t\t\tif i == len(faltantes)-1 {\n\t\t\t\tfmt.Printf(\"%d\\n\", faltantes[i])\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tfmt.Printf(\"%d \", faltantes[i])\n\t\t}\n\t}\n}\n*/\n",
+            "lines": "101"
         }
     ]
 }

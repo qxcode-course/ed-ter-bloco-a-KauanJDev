@@ -19,7 +19,9 @@ func main() {
 		if a[i] < 10 || b[i] < 10 {
 			continue
 		}
+
 		pontuacao := a[i] - b[i]
+
 		if pontuacao < 0 {
 			pontuacao = -pontuacao
 		}
