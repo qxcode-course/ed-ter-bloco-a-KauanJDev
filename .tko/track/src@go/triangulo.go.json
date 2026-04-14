@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_17-28-03",
+            "content": "@@ -31,22 +31,20 @@\n )%0A%0Afunc \n-triang\n+circ\n ulo(pen \n@@ -49,19 +49,19 @@\n n *Pen, \n-lad\n+rai\n o float6\n@@ -69,19 +69,19 @@\n ) %7B%0A%09if \n-lad\n+rai\n o %3C 2 %7B%0A\n@@ -96,129 +96,105 @@\n %0A%09%7D%0A\n-%0A%09metade := lado / 2%0A%0A%09pen.SetRGB(0, 0, 0)%0A%09for range 3 %7B%0A%09%09pen.Walk(lado)%0A%09%09pen.Right(120)%0A%09%7D%0A%0A%09triangulo(pen, metade)%0A%0A\n+%09pen.SetRGB(0, 0, 0)%0A%09pen.DrawCircle(raio)%0A%0A%09raioFilho := raio / 3.0%0A%0A%09for i := 0; i %3C 6; i++ %7B%0A%09\n %09pen\n@@ -195,24 +195,25 @@\n %0A%09%09pen.Up()%0A\n+%09\n %09pen.Walk(me\n@@ -206,32 +206,31 @@\n %0A%09%09pen.Walk(\n-metade\n+raio\n )%0A\n+%09\n %09pen.Down()%0A\n@@ -221,39 +221,39 @@\n o)%0A%09%09pen.Down()%0A\n-%09triang\n+%0A%09%09circ\n ulo(pen, metade)\n@@ -249,226 +249,64 @@\n en, \n-metade)%0A%0A%09pen.Up()%0A%09pen.Right(180)%0A%09pen.Walk(metade)%0A%09pen.Left(180)%0A%09pen.Down()%0A%0A%09pen.Up()%0A%09pen.Right(60)%0A%09pen.Walk(metade)%0A%09pen.Left(60)%0A%09pen.Down()%0A%09triangulo(pen, metade)%0A%0A%09pen.Up()%0A%09pen.Left(120)%0A%09pen.Walk(metade)%0A\n+raioFilho)%0A%0A%09%09pen.Up()%0A%09%09pen.Walk(-raio)%0A%09%09pen.Down()%0A%0A%09\n %09pen\n@@ -316,25 +316,14 @@\n ght(\n-12\n+6\n 0)%0A%09\n-pen.Down()%0A\n+%7D\n %0A%7D%0A%0A\n@@ -431,22 +431,20 @@\n Down()%0A%09\n-triang\n+circ\n ulo(pen,\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_17-28-19",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc triangulo(pen *Pen, lado float64) {\n\tif lado < 2 {\n\t\treturn\n\t}\n\n\tmetade := lado / 2\n\n\tpen.SetRGB(0, 0, 0)\n\tfor range 3 {\n\t\tpen.Walk(lado)\n\t\tpen.Right(120)\n\t}\n\n\ttriangulo(pen, metade)\n\n\tpen.Up()\n\tpen.Walk(metade)\n\tpen.Down()\n\ttriangulo(pen, metade)\n\n\tpen.Up()\n\tpen.Right(180)\n\tpen.Walk(metade)\n\tpen.Left(180)\n\tpen.Down()\n\n\tpen.Up()\n\tpen.Right(60)\n\tpen.Walk(metade)\n\tpen.Left(60)\n\tpen.Down()\n\ttriangulo(pen, metade)\n\n\tpen.Up()\n\tpen.Left(120)\n\tpen.Walk(metade)\n\tpen.Right(120)\n\tpen.Down()\n\n}\n\nfunc main() {\n\tpen := NewPen(500, 800)\n\tpen.Up()\n\tpen.SetHeading(90)\n\tpen.SetPosition(250, 500)\n\tpen.Down()\n\ttriangulo(pen, 200)\n\tpen.SavePNG(\"triangulo.png\")\n\tfmt.Printf(\"salvou\")\n}\n",
+            "lines": "57"
+        }
+    ]
+}

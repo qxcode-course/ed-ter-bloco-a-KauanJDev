@@ -55,13 +55,11 @@ func main() {
 	fmt.Sscanf(nl_nc, "%d %d", &nl, &nc)
 	grid := make([][]rune, nl)
 
-	// Lê a gridriz
 	for i := range nl {
 		scanner.Scan()
 		grid[i] = []rune(scanner.Text())
 	}
 
-	// Procura posições de início e endPos e conserta para _
 	var startPos, endPos Pos
 	for l := range nl {
 		for c := range nc {
@@ -78,7 +76,6 @@ func main() {
 
 	search(grid, startPos, endPos)
 
-	// Imprime o labirinto final
 	for _, line := range grid {
 		fmt.Println(string(line))
 	}

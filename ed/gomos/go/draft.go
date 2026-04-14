@@ -3,35 +3,34 @@ package main
 import "fmt"
 
 func main() {
-	var gomos, posicaoX, posicaoY int
+	var gomos int
 	var direcao string
-	var antX, antY, tempX, tempY int
 	fmt.Scan(&gomos, &direcao)
+
+	x := make([]int, gomos)
+	y := make([]int, gomos)
+
 	for i := 0; i < gomos; i++ {
-		fmt.Scan(&posicaoX, &posicaoY)
-		if i == 0 {
-			antX = posicaoX
-			antY = posicaoY
+		fmt.Scan(&x[i], &y[i])
+	}
 
-			switch direcao {
-			case "D":
-				posicaoY++
-			case "U":
-				posicaoY--
-			case "R":
-				posicaoX++
-			case "L":
-				posicaoX--
-			}
-		} else {
-			tempX = posicaoX
-			tempY = posicaoY
-			posicaoX = antX
-			posicaoY = antY
-			antX = tempX
-			antY = tempY
-		}
+	for i := gomos - 1; i > 0; i-- {
+		x[i] = x[i-1]
+		y[i] = y[i-1]
+	}
 
-		fmt.Printf("%d %d\n", posicaoX, posicaoY)
+	switch direcao {
+	case "D":
+		y[0]++
+	case "U":
+		y[0]--
+	case "R":
+		x[0]++
+	case "L":
+		x[0]--
+	}
+
+	for i := 0; i < gomos; i++ {
+		fmt.Printf("%d %d\n", x[i], y[i])
 	}
 }

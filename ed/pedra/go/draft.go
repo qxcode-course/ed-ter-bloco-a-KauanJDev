@@ -19,12 +19,12 @@ func main() {
 		if a[i] < 10 || b[i] < 10 {
 			continue
 		}
-		diferencaAb := a[i] - b[i]
-		if diferencaAb < 0 {
-			diferencaAb = -diferencaAb
+		pontuacao := a[i] - b[i]
+		if pontuacao < 0 {
+			pontuacao = -pontuacao
 		}
-		if diferenca < 0 || diferencaAb < diferenca {
-			diferenca = diferencaAb
+		if diferenca < 0 || pontuacao < diferenca {
+			diferenca = pontuacao
 			vencedor = i
 		}
 	}

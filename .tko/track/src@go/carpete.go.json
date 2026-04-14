@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_17-26-05",
+            "content": "@@ -1252,22 +1252,21 @@\n avePNG(%22\n-c\n ar\n-pet\n+vor\n e.png%22)%0A\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-04-13_17-26-37",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc carpete(pen *Pen, linha float64) {\n\tif linha < 2 {\n\t\treturn\n\t}\n\tsub := linha / 3\n\n\tpen.SetRGB(255, 255, 255)\n\tpen.FillSquare(linha, linha)\n\tpen.SetRGB(0, 0, 0)\n\tpen.Up()\n\tpen.SetHeading(0)\n\tpen.Walk(sub)\n\tpen.SetHeading(270)\n\tpen.Walk(sub)\n\tpen.FillSquare(sub, sub)\n\tpen.SetHeading(90)\n\tpen.Walk(sub)\n\tpen.SetHeading(180)\n\tpen.Walk(sub)\n\n\tcarpete(pen, sub)\n\tpen.Up()\n\tpen.SetHeading(0)\n\tpen.Walk(sub)\n\tpen.Down()\n\tcarpete(pen, sub)\n\tpen.Up()\n\tpen.SetHeading(0)\n\tpen.Walk(sub)\n\tpen.Down()\n\tcarpete(pen, sub)\n\n\tpen.Up()\n\tpen.SetHeading(180)\n\tpen.Walk(sub * 2)\n\tpen.SetHeading(270)\n\tpen.Walk(sub)\n\tpen.Down()\n\tcarpete(pen, sub)\n\n\tpen.Up()\n\tpen.SetHeading(0)\n\tpen.Walk(sub * 2)\n\tpen.Down()\n\tcarpete(pen, sub)\n\n\tpen.Up()\n\tpen.SetHeading(180)\n\tpen.Walk(sub * 2)\n\tpen.SetHeading(270)\n\tpen.Walk(sub)\n\tpen.Down()\n\tcarpete(pen, sub)\n\n\tpen.Up()\n\tpen.SetHeading(0)\n\tpen.Walk(sub)\n\tpen.Down()\n\tcarpete(pen, sub)\n\n\tpen.Up()\n\tpen.SetHeading(0)\n\tpen.Walk(sub)\n\tpen.Down()\n\tcarpete(pen, sub)\n\n\tpen.Up()\n\tpen.SetHeading(180)\n\tpen.Walk(sub * 2)\n\tpen.SetHeading(90)\n\tpen.Walk(sub * 2)\n\tpen.Down()\n}\n\nfunc main() {\n\tpen := NewPen(500, 800)\n\tpen.Up()\n\tpen.SetHeading(90)\n\tpen.SetPosition(250, 500)\n\tpen.Down()\n\tcarpete(pen, 200)\n\tpen.SavePNG(\"carpete.png\")\n\tfmt.Printf(\"salvou\")\n}\n",
+            "lines": "90"
+        }
+    ]
+}

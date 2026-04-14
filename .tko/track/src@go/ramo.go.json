@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_17-29-36",
+            "content": "@@ -864,17 +864,17 @@\n on(250, \n-8\n+5\n 00)%0A%09pen\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-04-13_17-29-54",
+            "content": "@@ -114,16 +114,39 @@\n ha / 4%0A%0A\n+%09pen.SetRGB(255, 0, 0)%0A\n %09pen.Wal\n@@ -892,17 +892,17 @@\n mo(pen, \n-3\n+2\n 00)%0A%09pen\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-04-13_17-30-48",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc ramo(pen *Pen, linha float64) {\n\tif linha < 2 {\n\t\treturn\n\t}\n\n\tquarto := linha / 4\n\n\tpen.Walk(linha)\n\tpen.Up()\n\tpen.Walk(-linha)\n\tpen.Walk(quarto)\n\tpen.Right(60)\n\tpen.Down()\n\tramo(pen, quarto)\n\tpen.Left(120)\n\tramo(pen, quarto)\n\n\tpen.Right(60)\n\tpen.Walk(-quarto)\n\tpen.Up()\n\tpen.Walk(quarto * 2)\n\tpen.Right(60)\n\tpen.Down()\n\tramo(pen, quarto)\n\tpen.Left(120)\n\tramo(pen, quarto)\n\n\tpen.Right(60)\n\tpen.Walk(-quarto * 2)\n\tpen.Up()\n\tpen.Walk(quarto * 3)\n\tpen.Right(60)\n\tpen.Down()\n\tramo(pen, quarto)\n\tpen.Left(120)\n\tramo(pen, quarto)\n\n\tpen.Right(60)\n\tpen.Walk(-quarto * 3)\n\tpen.Up()\n\n\tpen.Walk(quarto * 4)\n\tpen.Right(60)\n\tpen.Down()\n\tramo(pen, quarto)\n\tpen.Left(120)\n\tramo(pen, quarto)\n\n\tpen.Right(60)\n\tpen.Walk(-quarto * 4)\n\n}\n\nfunc main() {\n\tpen := NewPen(500, 800)\n\tpen.Up()\n\tpen.SetHeading(90)\n\tpen.SetPosition(250, 800)\n\tpen.Down()\n\tramo(pen, 300)\n\tpen.SavePNG(\"ramo.png\")\n\tfmt.Printf(\"salvou\")\n}\n",
+            "lines": "69"
+        }
+    ]
+}

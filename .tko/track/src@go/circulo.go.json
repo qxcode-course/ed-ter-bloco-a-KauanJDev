@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_17-17-54",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc circulo(pen *Pen, raio float64) {\n\tif raio < 2 {\n\t\treturn\n\t}\n\tpen.SetRGB(0, 0, 0)\n\tpen.DrawCircle(raio)\n\n\traioFilho := raio / 3.0\n\n\tfor i := 0; i < 6; i++ {\n\t\tpen.Up()\n\t\tpen.Walk(raio)\n\t\tpen.Down()\n\n\t\tcirculo(pen, raioFilho)\n\n\t\tpen.Up()\n\t\tpen.Walk(-raio)\n\t\tpen.Down()\n\n\t\tpen.Right(60)\n\t}\n}\n\nfunc main() {\n\tpen := NewPen(500, 800)\n\tpen.Up()\n\tpen.SetHeading(90)\n\tpen.SetPosition(250, 500)\n\tpen.Down()\n\tcirculo(pen, 200)\n\tpen.SavePNG(\"circulo.png\")\n\tfmt.Printf(\"salvou\")\n}\n",
+            "lines": "40"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_17-23-41",
+            "content": "@@ -27,101 +27,9 @@\n mt%22%0A\n-%09%22math/rand%22%0A)%0A%0Afunc ri(inf, sup int) float64 %7B%0A%09return float64(rand.Intn(sup-inf+1) + inf)%0A%7D\n+)\n %0A%0Afu\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-13_17-24-13",
+            "content": "@@ -434,23 +434,23 @@\n avePNG(%22\n-espiral\n+circulo\n .png%22)%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-13_17-24-27",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\n\nfunc espiral(pen *Pen, linha float64) {\n\tif linha < 2 {\n\t\treturn\n\t}\n\tpen.SetRGB(ri(0, 255), ri(0, 255), ri(0, 255))\n\tpen.Walk(linha)\n\tpen.Right(90)\n\tespiral(pen, linha-10)\n}\n\nfunc main() {\n\tpen := NewPen(500, 800)\n\tpen.Up()\n\tpen.SetHeading(90)\n\tpen.SetPosition(250, 500)\n\tpen.Down()\n\tespiral(pen, 200)\n\tpen.SavePNG(\"espiral.png\")\n\tfmt.Printf(\"salvou\")\n}\n",
+            "lines": "31"
+        }
+    ]
+}

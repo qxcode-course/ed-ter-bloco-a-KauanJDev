@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_17-20-13",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc gelo(pen *Pen, linha float64) {\n\tif linha < 2 {\n\t\treturn\n\t}\n\tpen.SetRGB(0, 0, 0)\n\tfor i := 0; i < 5; i++ {\n\t\tpen.Right(72)\n\t\tpen.Walk(linha)\n\t\tgelo(pen, linha/3)\n\t\tpen.Walk(-linha)\n\t}\n\n}\n\nfunc main() {\n\tpen := NewPen(500, 800)\n\tpen.Up()\n\tpen.SetHeading(90)\n\tpen.SetPosition(250, 500)\n\tpen.Down()\n\tgelo(pen, 200)\n\tpen.SavePNG(\"gelo.png\")\n\tfmt.Printf(\"salvou\")\n}\n",
+            "lines": "30"
+        }
+    ]
+}

@@ -17,11 +17,9 @@ func main() {
 		fmt.Scan(&figurinhas[i])
 	}
 	sort.Ints(figurinhas)
-	nRepetidas := 0
 	for i := 1; i < figurinhasPossuidas; i++ {
 		if i >= 1 && figurinhas[i] == figurinhas[i-1] {
 			repetidas = append(repetidas, figurinhas[i])
-			nRepetidas++
 		}
 	}
 	for i := 1; i <= totalFigurinhas; i++ {

@@ -15,12 +15,12 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@rec
+- ed@basic
 flags:
   inbox: all
   panel: graph
-  show_panel: 'false'
+  show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@labirinto
+selected: ed@basic

@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_17-21-25",
+            "content": "@@ -1156,23 +1156,19 @@\n avePNG(%22\n-quadrad\n+gel\n o.png%22)%0A\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-04-13_17-21-47",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc quadrado(pen *Pen, lado float64) {\n\tif lado < 4 {\n\t\treturn\n\t}\n\n\tpen.SetRGB(0, 0, 0)\n\tpen.DrawRect(lado, lado)\n\n\tsub := lado / 2\n\tsub2 := sub / 2\n\n\tpen.Up()\n\tpen.SetHeading(180)\n\tpen.Walk(sub2)\n\tpen.SetHeading(90)\n\tpen.Walk(sub2)\n\tpen.Down()\n\tquadrado(pen, sub)\n\n\tpen.Up()\n\tpen.SetHeading(270)\n\tpen.Walk(sub2)\n\tpen.SetHeading(0)\n\tpen.Walk(sub2)\n\n\tpen.SetHeading(0)\n\tpen.Walk(lado - sub2)\n\tpen.SetHeading(90)\n\tpen.Walk(sub2)\n\tpen.Down()\n\tquadrado(pen, sub)\n\n\tpen.Up()\n\tpen.SetHeading(270)\n\tpen.Walk(sub2)\n\tpen.SetHeading(180)\n\tpen.Walk(lado - sub2)\n\n\tpen.SetHeading(180)\n\tpen.Walk(sub2)\n\tpen.SetHeading(270)\n\tpen.Walk(lado - sub2)\n\tpen.Down()\n\tquadrado(pen, sub)\n\n\tpen.Up()\n\tpen.SetHeading(90)\n\tpen.Walk(lado - sub2)\n\tpen.SetHeading(0)\n\tpen.Walk(sub2)\n\n\tpen.SetHeading(0)\n\tpen.Walk(lado - sub2)\n\tpen.SetHeading(270)\n\tpen.Walk(lado - sub2)\n\tpen.Down()\n\tquadrado(pen, sub)\n\n\tpen.Up()\n\tpen.SetHeading(90)\n\tpen.Walk(lado - sub2)\n\tpen.SetHeading(180)\n\tpen.Walk(lado - sub2)\n\tpen.Down()\n\n}\n\nfunc main() {\n\tpen := NewPen(500, 800)\n\tpen.Up()\n\tpen.SetHeading(90)\n\tpen.SetPosition(250, 500)\n\tpen.Down()\n\tquadrado(pen, 200)\n\tpen.SavePNG(\"quadrado.png\")\n\tfmt.Printf(\"salvou\")\n}\n",
+            "lines": "83"
+        }
+    ]
+}

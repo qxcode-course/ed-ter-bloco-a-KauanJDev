@@ -64,6 +64,5 @@ func main() {
 		numeros[proximoIdx] = 0
 
 		espada = proximo(numeros, N, proximoIdx)
-
 	}
 }
