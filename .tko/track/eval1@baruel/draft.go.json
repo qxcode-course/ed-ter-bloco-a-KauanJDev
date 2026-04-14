@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_10-21-32",
+            "content": "@@ -186,31 +186,8 @@\n %0A%09%7D%0A\n-%09fmt.Print(figurinhas)%0A\n %09enc\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-14_10-22-11",
+            "content": "@@ -84,17 +84,16 @@\n _album, \n-&\n possui)%0A\n@@ -182,16 +182,39 @@\n %5Bi%5D)%0A%09%7D%0A\n+%09fmt.Print(figurinhas)%0A\n %09encontr\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-14_10-22-43",
+            "content": "@@ -247,11 +247,8 @@\n int,\n- 0,\n  pos\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-14_10-23-23",
+            "content": "@@ -389,65 +389,8 @@\n %0A%09%7D%0A\n-%0A%09if len(repetidas) == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09\n %09out\n@@ -421,25 +421,24 @@\n  repetidas)%0A\n-%09\n %09fmt.Print(o\n@@ -467,277 +467,6 @@\n 1%5D)%0A\n-%09%7D%0A%0A%09unicas := make(%5B%5Dint, 0, fig_album)%0A%0A%09for i := 1; i %3C= fig_album; i++ %7B%0A%09%09if !encontradas%5Bi%5D %7B%0A%09%09%09unicas = append(unicas, i)%0A%09%09%7D%0A%09%7D%0A%0A%09if len(unicas) == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09%09output := fmt.Sprintf(%22%25v%22, unicas)%0A%09%09fmt.Print(output%5B1 : len(output)-1%5D)%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-14_10-26-24",
+            "content": "@@ -485,34 +485,32 @@\n das)%0A%09%09fmt.Print\n-ln\n (output%5B1 : len(\n@@ -760,18 +760,16 @@\n mt.Print\n-ln\n (output%5B\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-14_10-26-56",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar fig_album, possui int\n\tfmt.Scan(&fig_album, &possui)\n\tfigurinhas := make([]int, possui)\n\tfor i := range possui {\n\t\tfmt.Scan(&figurinhas[i])\n\t}\n\tencontradas := make(map[int]bool)\n\trepetidas := make([]int, 0, possui)\n\n\tfor _, fig := range figurinhas {\n\t\tif encontradas[fig] {\n\t\t\trepetidas = append(repetidas, fig)\n\t\t}\n\t\tencontradas[fig] = true\n\t}\n\n\tif len(repetidas) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\toutput := fmt.Sprintf(\"%v\", repetidas)\n\t\tfmt.Println(output[1 : len(output)-1])\n\t}\n\n\tunicas := make([]int, 0, fig_album)\n\n\tfor i := 1; i <= fig_album; i++ {\n\t\tif !encontradas[i] {\n\t\t\tunicas = append(unicas, i)\n\t\t}\n\t}\n\n\tif len(unicas) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\toutput := fmt.Sprintf(\"%v\", unicas)\n\t\tfmt.Println(output[1 : len(output)-1])\n\t}\n\n}\n",
+            "lines": "44"
+        }
+    ]
+}

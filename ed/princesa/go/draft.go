@@ -8,7 +8,6 @@ func printNumeros(numeros []int, N int, E int) {
 		if numeros[i] == 0 {
 			continue
 		}
-
 		if numeros[i] == E {
 			fmt.Printf("%d> ", numeros[i])
 		} else {
@@ -17,7 +16,6 @@ func printNumeros(numeros []int, N int, E int) {
 	}
 	fmt.Print("]\n")
 }
-
 func proximo(numeros []int, N int, atual int) int {
 	for i := atual + 1; i <= N; i++ {
 		if numeros[i] != 0 {
@@ -31,7 +29,6 @@ func proximo(numeros []int, N int, atual int) int {
 	}
 	return -1
 }
-
 func validos(numeros []int, N int) int {
 	validos := 0
 	for i := 1; i <= N; i++ {
@@ -41,7 +38,6 @@ func validos(numeros []int, N int) int {
 	}
 	return validos
 }
-
 func main() {
 	var N, E int
 	fmt.Scan(&N, &E)

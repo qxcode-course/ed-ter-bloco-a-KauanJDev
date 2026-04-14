@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_10-39-30",
+            "content": "@@ -469,83 +469,20 @@\n %7D%0A%09f\n-or i := range len(id) %7B%0A%09%09if id%5Bi%5D != 0 %7B%0A%09%09%09fmt.Printf(%22%25v%22, id%5Bi%5D)%0A%09%09%7D%0A%09%7D\n+mt.Print(id)\n %0A%0A%7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-14_10-41-10",
+            "content": "@@ -524,17 +524,16 @@\n intf(%22%25v\n- \n %22, id%5Bi%5D\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_10-41-17",
+            "content": "@@ -543,67 +543,8 @@\n %09%09%7D%0A\n-%09%09if id%5Bi%5D == len(id)-1 %7B%0A%09%09%09fmt.Printf(%22%25v%5Cn%22, id%5Bi%5D)%0A%09%09%7D%0A\n %09%7D%0A%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_10-42-13",
+            "content": "@@ -577,16 +577,17 @@\n mt.Print\n+f\n (%22%25v%5Cn%22,\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-14_10-43-30",
+            "content": "@@ -581,11 +581,17 @@\n rint\n-ln(\n+(%22%25v%5Cn%22, \n id%5Bi\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-14_10-44-13",
+            "content": "@@ -581,20 +581,16 @@\n rint\n+ln\n (id%5Bi%5D\n-, %22%5Cn%22\n )%0A%09%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-14_10-45-22",
+            "content": "@@ -579,24 +579,30 @@\n .Print(id%5Bi%5D\n+, %22%5Cn%22\n )%0A%09%09%7D%0A%09%7D%0A%0A%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-14_10-45-39",
+            "content": "@@ -544,23 +544,59 @@\n %09%7D%0A%09\n-%7D%0A%09fmt.Println()\n+%09if id%5Bi%5D == len(id)-1 %7B%0A%09%09%09fmt.Print(id%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A\n %0A%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-14_10-46-10",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar pessoasNaFila, deixaram_fila int\n\n\tfmt.Scan(&pessoasNaFila)\n\tid := make([]int, pessoasNaFila)\n\tfor i := range pessoasNaFila {\n\t\tfmt.Scan(&id[i])\n\t}\n\n\tfmt.Scan(&deixaram_fila)\n\tid_desertores := make([]int, deixaram_fila)\n\tfor i := range deixaram_fila {\n\t\tfmt.Scan(&id_desertores[i])\n\t}\n\n\tfor i := 0; i < pessoasNaFila; i++ {\n\t\tfor j := 0; j < deixaram_fila; j++ {\n\t\t\tif id[i] == id_desertores[j] {\n\t\t\t\tid[i] = 0\n\t\t\t}\n\t\t}\n\t}\n\tfor i := range len(id) {\n\t\tif id[i] != 0 {\n\t\t\tfmt.Printf(\"%v \", id[i])\n\t\t}\n\t}\n\tfmt.Println()\n}\n",
+            "lines": "33"
+        }
+    ]
+}
