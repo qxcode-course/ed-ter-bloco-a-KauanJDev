@@ -89,3 +89,8 @@
 2026-04-14 11:45:34, MOVE, v:1, k:eval1@queimada, mode:EDIT
 2026-04-14 11:50:40, EXEC, v:1, k:eval1@queimada, mode:FULL, rate:0, size:52
 2026-04-14 11:50:51, MOVE, v:1, k:eval1@queimada, mode:BACK
+2026-04-14 21:30:57, MOVE, v:1, k:eval1@queimada, mode:PICK
+2026-04-14 21:31:00, EXEC, v:1, k:eval1@queimada, mode:FULL, rate:0, size:52
+2026-04-14 21:31:10, EXEC, v:1, k:eval1@queimada, mode:FULL, rate:100, size:52
+2026-04-14 21:31:12, MOVE, v:1, k:eval1@queimada, mode:BACK
+2026-04-14 21:31:17, MOVE, v:1, k:eval1@triangulo, mode:PICK

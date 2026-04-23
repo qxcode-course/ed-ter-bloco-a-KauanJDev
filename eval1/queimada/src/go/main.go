@@ -9,8 +9,8 @@ import (
 func burnTrees(grid [][]rune, l, c int) {
 	nl := len(grid)
 	nc := len(grid[0])
-	fmt.Print(nl, nc)
-	if grid[l+1][c] > grid[nl][c] || grid[l-1][c] < grid[nl][c] || grid[l][c+1] > grid[l][nc] || grid[l][c-1] < grid[l][nc] {
+
+	if l < 0 || l >= nl || c < 0 || c >= nc {
 		return
 	}
 
