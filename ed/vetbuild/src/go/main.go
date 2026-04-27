@@ -15,10 +15,6 @@ type Vector struct {
 	capacity int
 }
 
-type error interface {
-	Error() string
-}
-
 func NewVector(capacity int) *Vector {
 	return &Vector{
 		data:     make([]int, 0, capacity), // nunca use len(data) ou cap(data) ou qq método do go de manipulação de array
@@ -67,6 +63,19 @@ func (v *Vector) String() string {
 	}
 	string += fmt.Sprintf("]\n")
 	return string
+}
+
+func FormatSlice(s []int) string {
+	str := "["
+	for i, v := range s {
+		if i < len(s)-1 {
+			str += fmt.Sprintf("%v, ", v)
+		} else {
+			str += fmt.Sprintf("%v", v)
+		}
+	}
+	str += "]"
+	return str
 }
 
 func (v *Vector) In_Range(i int) bool {
@@ -268,15 +277,7 @@ func main() {
 			start, _ := strconv.Atoi(parts[1])
 			end, _ := strconv.Atoi(parts[2])
 			slice := v.Slice(start, end)
-			fmt.Print("[")
-			for i := 0; i < len(slice); i++ {
-				if i < len(slice)-1 {
-					fmt.Printf("%d, ", slice[i])
-				} else {
-					fmt.Printf("%d", slice[i])
-				}
-			}
-			fmt.Println("]")
+			fmt.Println(FormatSlice(slice))
 		default:
 			fmt.Println("fail: comando invalido")
 		}

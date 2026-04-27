@@ -100,8 +100,8 @@ func (ms *MultiSet) Unique() int {
 }
 
 func contains(slice []int, value int) bool {
-	for _, v := range slice {
-		if v == value {
+	for i := 0; i < len(slice); i++ {
+		if slice[i] == value {
 			return true
 		}
 	}

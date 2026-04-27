@@ -15,10 +15,6 @@ type Set struct {
 	capacity int
 }
 
-type error interface {
-	Error() string
-}
-
 func NewSet(capacity int) *Set {
 	return &Set{
 		data:     make([]int, 0, capacity),
@@ -28,8 +24,8 @@ func NewSet(capacity int) *Set {
 }
 
 func (s *Set) Insert(value int) error {
-	for _, v := range s.data {
-		if v == value {
+	for i := 0; i < s.size; i++ {
+		if s.data[i] == value {
 			return nil
 		}
 	}
@@ -41,18 +37,20 @@ func (s *Set) Insert(value int) error {
 			break
 		}
 	}
+
 	s.data = append(s.data, 0)
 	for i := s.size; i > posicao; i-- {
 		s.data[i] = s.data[i-1]
 	}
+
 	s.data[posicao] = value
 	s.size++
 	return nil
 }
 
 func (s *Set) Contains(value int) bool {
-	for _, v := range s.data {
-		if v == value {
+	for i := 0; i < s.size; i++ {
+		if s.data[i] == value {
 			return true
 		}
 	}
@@ -97,7 +95,6 @@ func main() {
 		fmt.Println(line)
 		parts := strings.Fields(line)
 		if len(parts) == 0 {
-
 			continue
 		}
 		cmd = parts[0]
