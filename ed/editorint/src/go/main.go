@@ -33,9 +33,16 @@ func (e *Editor) KeyLeft() {
 
 func (e *Editor) KeyEnter() {
 	new := NewList[rune]()
-	e.lines.Insert(e.line.Next(), new)
-	e.line = e.line.Next()
-	e.cursor = e.line.Value.Front()
+
+	if e.cursor != e.line.Value.End() {
+		for i := e.cursor.Next(); i != e.line.Value.End(); i = i.Next() {
+			e.line.Value.Erase(i)
+			new.PushBack(i.Value)
+		}
+		e.lines.Insert(e.line.Next(), new)
+		e.line = e.line.Next()
+		e.cursor = e.line.Value.Front()
+	}
 }
 
 func (e *Editor) KeyRight() {
@@ -64,16 +71,34 @@ func (e *Editor) KeyDown() {
 }
 
 func (e *Editor) KeyBackspace() {
-	if e.line != nil {
-		e.line.Value.Erase(e.cursor.Prev())
+	if e.cursor != nil && e.cursor != e.line.Value.Front() {
+		prev := e.cursor.Prev()
+		if prev != nil {
+			e.cursor = prev
+			e.line.Value.Erase(prev)
+		}
+	} else if e.line != nil && e.line != e.lines.Front() {
+		prevLine := e.line.Prev()
+		e.cursor = prevLine.Value.Back()
+
+		for i := e.line.Value.Front(); i != e.line.Value.End(); i = i.Next() {
+			prevLine.Value.PushBack(i.Value)
+		}
+		e.lines.Erase(e.line)
+		e.line = prevLine
 	}
 }
 
 func (e *Editor) KeyDelete() {
 	if e.cursor != e.line.Value.End() {
 		e.line.Value.Erase(e.cursor.Next())
+	} else if e.line != nil && e.line != e.lines.End() {
+		nextLine := e.line.Next()
+		for i := nextLine.Value.Front(); i != nextLine.Value.End(); i = i.Next() {
+			e.line.Value.PushBack(i.Value)
+		}
+		e.lines.Erase(nextLine)
 	}
-
 }
 
 func main() {
