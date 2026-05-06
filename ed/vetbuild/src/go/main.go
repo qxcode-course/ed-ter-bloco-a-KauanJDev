@@ -150,6 +150,7 @@ func (v *Vector) Slice(start, end int) []int {
 	if end < 0 {
 		end = v.size + end
 	}
+
 	start = start % v.size
 	end = end % v.size
 
