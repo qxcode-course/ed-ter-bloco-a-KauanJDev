@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-19_16-53-13",
+            "content": "@@ -525,17 +525,17 @@\n %5Bj%5D == '\n-0\n+1\n ' %7B%0A%09%09re\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-05-19_16-54-41",
+            "content": "@@ -241,61 +241,8 @@\n %09%7D%0A%0A\n-%09visited := make(map%5Bint%5Dbool)%0A%09cols := len(grid%5B0%5D)%0A\n %09cou\n@@ -349,30 +349,8 @@\n  '1'\n- && !visited%5Bi*cols+j%5D\n  %7B%0A%09\n@@ -378,31 +378,16 @@\n id, i, j\n-, visited, cols\n )%0A%09%09%09%7D%0A%09\n@@ -446,40 +446,8 @@\n , j \n-int, visited map%5Bint%5Dbool, cols \n int)\n@@ -548,77 +548,24 @@\n %7D%0A%0A%09\n-key := i*cols + j%0A%09if visited%5Bkey%5D %7B%0A%09%09return%0A%09%7D%0A%09visited%5Bkey%5D = true\n+grid%5Bi%5D%5Bj%5D = '0'\n %0A%0A%09d\n@@ -579,31 +579,16 @@\n , i, j+1\n-, visited, cols\n )%0A%09dfs(g\n@@ -598,31 +598,16 @@\n , i, j-1\n-, visited, cols\n )%0A%09dfs(g\n@@ -617,31 +617,16 @@\n , i+1, j\n-, visited, cols\n )%0A%09dfs(g\n@@ -640,23 +640,8 @@\n 1, j\n-, visited, cols\n )%0A%7D%0A\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-05-19_17-06-01",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00e3o modifique a assinatura da fun\u00e7\u00e3o numIslands\n// Ela \u00e9 a fun\u00e7\u00e3o que ser\u00e1 chamada no LeetCode para resolver o problema\nfunc numIslands(grid [][]byte) int {\n\tif len(grid) == 0 {\n\t\treturn 0\n\t}\n\n\tvisited := make(map[int]bool)\n\tcols := len(grid[0])\n\tcount := 0\n\n\tfor i := 0; i < len(grid); i++ {\n\t\tfor j := 0; j < len(grid[0]); j++ {\n\t\t\tif grid[i][j] == '1' && !visited[i*cols+j] {\n\t\t\t\tcount++\n\t\t\t\tdfs(grid, i, j, visited, cols)\n\t\t\t}\n\t\t}\n\t}\n\treturn count\n}\n\nfunc dfs(grid [][]byte, i int, j int, visited map[int]bool, cols int) {\n\tif i < 0 || i >= len(grid) || j < 0 || j >= len(grid[0]) || grid[i][j] == '0' {\n\t\treturn\n\t}\n\n\tkey := i*cols + j\n\tif visited[key] {\n\t\treturn\n\t}\n\tvisited[key] = true\n\n\tdfs(grid, i, j+1, visited, cols)\n\tdfs(grid, i, j-1, visited, cols)\n\tdfs(grid, i+1, j, visited, cols)\n\tdfs(grid, i-1, j, visited, cols)\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tgrid := make([][]byte, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\tgrid[i] = []byte(scanner.Text())\n\t}\n\tresult := numIslands(grid)\n\tfmt.Println(result)\n}\n",
+            "lines": "62"
+        }
+    ]
+}

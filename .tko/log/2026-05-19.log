@@ -4,3 +4,23 @@
 2026-05-19 10:22:02, EXEC, v:1, k:ed@editorint, mode:LOCK, rate:100, size:311
 2026-05-19 10:22:03, MOVE, v:1, k:ed@editorint, mode:BACK
 2026-05-19 10:23:52, SELF, v:1, k:ed@labirinto, self:1, rate:100
+2026-05-19 16:32:47, MOVE, v:1, k:ed@ilhas, mode:DOWN
+2026-05-19 16:32:50, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-05-19 16:35:18, MOVE, v:1, k:ed@ilhas, mode:BACK
+2026-05-19 16:32:47, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 16:32:47, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 16:34:30, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 16:45:46, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 16:51:26, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 16:53:02, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-05-19 16:53:13, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:0, size:56
+2026-05-19 16:54:40, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-05-19 16:54:41, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100, size:56
+2026-05-19 16:54:49, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 16:54:41, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 17:03:34, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 17:06:01, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100, size:62
+2026-05-19 17:05:57, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 17:06:01, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 17:09:57, MOVE, v:1, k:ed@ilhas, mode:BACK
+2026-05-19 17:10:16, SELF, v:1, k:ed@ilhas, self:1, rate:100, study:20
