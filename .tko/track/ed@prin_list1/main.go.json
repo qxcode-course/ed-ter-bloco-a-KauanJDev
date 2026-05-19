@@ -1,0 +1,99 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-08_17-20-47",
+            "content": "@@ -136,15 +136,199 @@\n %0A%09re\n-turn %22%22\n+sult := %22%22%0A%09for it := l.root; it != nil; it = it.next %7B%0A%09%09if it == sword %7B%0A%09%09%09result += fmt.Sprintf(%22%25d%3E%22, it.Value)%0A%09%09%7D else %7B%0A%09%09%09result += fmt.Sprintf(%22%25d %22, it.Value)%0A%09%09%7D%0A%09%7D%0A%09return result\n %0A%7D%0A%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-08_17-22-01",
+            "content": "@@ -136,200 +136,15 @@\n %0A%09re\n-sult := %22%22%0A%09for it := l.root; it != nil; it = it.next %7B%0A%09%09if it == sword %7B%0A%09%09%09result += fmt.Sprintf(%22%3C%25d%3E%22, it.Value)%0A%09%09%7D else %7B%0A%09%09%09result += fmt.Sprintf(%22%25d %22, it.Value)%0A%09%09%7D%0A%09%7D%0A%09return result\n+turn %22%22\n %0A%7D%0A%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-05-08_17-23-19",
+            "content": "@@ -435,15 +435,11 @@\n  == \n-it.root\n+nil\n  %7B%0A%09\n@@ -446,18 +446,19 @@\n %09return \n-it\n+nil\n %0A%09%7D%0A%09ret\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-08_17-24-59",
+            "content": "@@ -134,40 +134,20 @@\n  %7B%0A%09\n-values := make(%5B%5Dint, 0, l.size)\n+result := %22%22\n %0A%09fo\n@@ -194,45 +194,142 @@\n %7B%0A%09%09\n-values = append(values, it.Value)%0A%09%7D%0A\n+if it == sword %7B%0A%09%09%09result += fmt.Sprintf(%22%3C%25d%3E%22, it.Value)%0A%09%09%7D else %7B%0A%09%09%09result += fmt.Sprintf(%22%25d %22, it.Value)%0A%09%09%7D%0A%09%7D%0A%09return result\n %0A%7D%0A%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-08_17-26-05",
+            "content": "@@ -251,34 +251,8 @@\n %0A%09%7D%0A\n-%09return fmt.Sprint(values)\n %0A%7D%0A%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-05-08_17-26-28",
+            "content": "@@ -184,21 +184,16 @@\n root\n-.next\n ; it != \n l.ro\n@@ -188,22 +188,19 @@\n ; it != \n-l.root\n+nil\n ; it = i\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-05-08_17-27-09",
+            "content": "@@ -220,77 +220,8 @@\n t %7B%0A\n-%09%09if it == sword %7B%0A%09%09%09values = append(values, -it.Value)%0A%09%09%7D else %7B%0A%09\n %09%09va\n@@ -256,12 +256,8 @@\n ue)%0A\n-%09%09%7D%0A\n %09%7D%0A%09\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-05-08_17-27-50",
+            "content": "@@ -134,20 +134,40 @@\n  %7B%0A%09\n-string := %22%22\n+values := make(%5B%5Dint, 0, l.size)\n %0A%09fo\n@@ -242,90 +242,79 @@\n %0A%09%09%09\n-string += fmt.Sprintf(%22%25d%3E %22, -it.Value)%0A%09%09%7D else %7B%0A%09%09%09string += fmt.Sprintf(%22%25d %22\n+values = append(values, -it.Value)%0A%09%09%7D else %7B%0A%09%09%09values = append(values\n , it\n@@ -347,22 +347,22 @@\n .Sprint(\n-string\n+values\n )%0A%7D%0A%0A// \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-08_17-29-55",
+            "content": "@@ -244,24 +244,25 @@\n ntf(%22%25d%3E %22, \n+-\n it.Value)%0A%09%09\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-08_17-30-26",
+            "content": "@@ -555,16 +555,42 @@\n chosen)%0A\n+%09fmt.Println(qtd, chosen)%0A\n %09l := Ne\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-08_17-32-03",
+            "content": "@@ -446,19 +446,19 @@\n  %7B%0A%09\n+i\n f\n-or\n  it \n-!= l\n+== it\n .roo\n@@ -463,27 +463,24 @@\n oot %7B%0A%09%09\n-it = it.nex\n+return i\n t%0A%09%7D%0A%09re\n@@ -486,16 +486,21 @@\n eturn it\n+.next\n %0A%7D%0A%0Afunc\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-08_17-32-27",
+            "content": "@@ -451,89 +451,37 @@\n or i\n- := it.root.next; i\n+t\n  != \n-it\n+l\n .root\n-; i = i.next %7B%0A%09%09if i == it %7B%0A%09%09%09return i\n+ %7B%0A%09%09it = it\n .next%0A\n-%09%09%7D%0A\n %09%7D%0A%09\n@@ -489,26 +489,16 @@\n eturn it\n-.root.next\n %0A%7D%0A%0Afunc\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-08_17-33-58",
+            "content": "@@ -446,46 +446,74 @@\n  %7B%0A%09\n-next := it.next%0A%09if next\n+for i := it.root.next; i != it.root; i = i.next %7B%0A%09%09if i\n  == it\n-.root\n  %7B%0A\n+%09\n %09%09re\n@@ -521,11 +521,18 @@\n urn \n-nil\n+i.next%0A%09%09%7D\n %0A%09%7D%0A\n@@ -539,16 +539,24 @@\n %09return \n+it.root.\n next%0A%7D%0A%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-08_17-36-41",
+            "content": "@@ -486,24 +486,18 @@\n %7B%0A%09%09\n-next = next.next\n+return nil\n %0A%09%7D%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-08_17-41-25",
+            "content": "@@ -141,17 +141,16 @@\n ing := %22\n-%5B\n %22%0A%09for i\n@@ -322,23 +322,8 @@\n %0A%09%7D%0A\n-%09string += %22%5D%22%0A\n %09ret\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-08_17-42-05",
+            "content": "@@ -242,17 +242,16 @@\n printf(%22\n- \n %25d%3E %22, i\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-08_17-42-22",
+            "content": "@@ -246,16 +246,17 @@\n tf(%22 %25d%3E\n+ \n %22, it.Va\n@@ -297,19 +297,19 @@\n printf(%22\n- \n %25d\n+ \n %22, it.Va\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-08_17-42-38",
+            "content": "@@ -331,17 +331,16 @@\n ing += %22\n- \n %5D%22%0A%09retu\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-08_17-43-07",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\tstring := \"[\"\n\tfor it := l.root.next; it != l.root; it = it.next {\n\t\tif it == sword {\n\t\t\tstring += fmt.Sprintf(\" %d>\", it.Value)\n\t\t} else {\n\t\t\tstring += fmt.Sprintf(\" %d\", it.Value)\n\t\t}\n\t}\n\tstring += \" ]\"\n\treturn fmt.Sprint(string)\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\tnext := it.next\n\tif next == it.root {\n\t\tnext = next.next\n\t}\n\treturn next\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\tl := NewDList[int]()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\tsword := l.Front()\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tl.Erase(Next(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "47"
+        }
+    ]
+}
