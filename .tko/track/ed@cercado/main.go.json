@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-19_17-53-33",
+            "content": "@@ -290,16 +290,38 @@\n %5D == 'O'\n+ && !visited%5Bi*cols+j%5D\n  %7B%0A%09%09%09%09d\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-19_17-59-20",
+            "content": "@@ -294,30 +294,8 @@\n  'O'\n- && !visited%5Bi*cols+j%5D\n  %7B%0A%09\n@@ -481,24 +481,45 @@\n i%5D%5Bj%5D != 'O'\n+ %7C%7C visited%5Bi*cols+j%5D\n  %7B%0A%09%09return%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-19_17-59-53",
+            "content": "@@ -511,29 +511,8 @@\n  'O'\n- %7C%7C visited%5Bi*cols+j%5D\n  %7B%0A%09\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-19_18-00-00",
+            "content": "@@ -574,81 +574,8 @@\n rue%0A\n-%0A%09if i == 0 %7C%7C i == len(board)-1 %7C%7C j == 0 %7C%7C j == cols-1 %7B%0A%09%09return%0A%09%7D%0A%0A\n %09dnf\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-19_18-00-32",
+            "content": "@@ -574,26 +574,80 @@\n rue%0A\n-%09board%5Bi%5D%5Bj%5D = 'X'\n+%0A%09if i == 0 %7C%7C i == len(board)-1 %7C%7C j == 0 %7C%7C j == cols-1 %7B%0A%09%09return%0A%09%7D%0A\n %0A%09dn\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-19_18-02-18",
+            "content": "@@ -355,30 +355,8 @@\n ls)%0A\n-%09%09%09%09board%5Bi%5D%5Bj%5D = 'X'%0A\n %09%09%09%7D\n@@ -570,16 +570,34 @@\n  = true%0A\n+%09board%5Bi%5D%5Bj%5D = 'X'\n %0A%09dnf(bo\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-05-19_18-05-48",
+            "content": "@@ -182,28 +182,8 @@\n ol)%0A\n-%09rows := len(board)%0A\n %09col\n@@ -276,86 +276,56 @@\n %09if \n-(i == 0 %7C%7C i == rows-1 %7C%7C j == 0 %7C%7C j == cols-1) && board%5Bi%5D%5Bj%5D == 'O'\n+board%5Bi%5D%5Bj%5D == 'O' && !visited%5Bi*cols+j%5D\n  %7B%0A%09%09%09%09d\n fs(b\n@@ -320,18 +320,18 @@\n  %7B%0A%09%09%09%09d\n+n\n f\n-s\n (board, \n@@ -351,16 +351,38 @@\n , cols)%0A\n+%09%09%09%09board%5Bi%5D%5Bj%5D = 'X'%0A\n %09%09%09%7D%0A%09%09%7D\n@@ -394,18 +394,18 @@\n %0A%0Afunc d\n+n\n f\n-s\n (board %5B\n@@ -595,18 +595,18 @@\n true%0A%0A%09d\n+n\n f\n-s\n (board, \n@@ -622,34 +622,34 @@\n isited, cols)%0A%09d\n+n\n f\n-s\n (board, i-1, j, \n@@ -657,34 +657,34 @@\n isited, cols)%0A%09d\n+n\n f\n-s\n (board, i, j+1, \n@@ -704,10 +704,10 @@\n )%0A%09d\n+n\n f\n-s\n (boa\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-05-19_18-09-51",
+            "content": "@@ -416,151 +416,8 @@\n %7D%0A%09%7D\n-%0A%0A%09for i := 0; i %3C rows; i++ %7B%0A%09%09for j := 0; j %3C cols; j++ %7B%0A%09%09%09if !visited%5Bi*cols+j%5D && board%5Bi%5D%5Bj%5D == 'O' %7B%0A%09%09%09%09board%5Bi%5D%5Bj%5D = 'X'%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-05-19_18-10-27",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]byte) {\n\tif len(board) == 0 {\n\t\treturn\n\t}\n\tvisited := make(map[int]bool)\n\trows := len(board)\n\tcols := len(board[0])\n\tfor i := 0; i < len(board); i++ {\n\t\tfor j := 0; j < cols; j++ {\n\t\t\tif (i == 0 || i == rows-1 || j == 0 || j == cols-1) && board[i][j] == 'O' {\n\t\t\t\tdfs(board, i, j, visited, cols)\n\t\t\t}\n\t\t}\n\t}\n\n\tfor i := 0; i < rows; i++ {\n\t\tfor j := 0; j < cols; j++ {\n\t\t\tif !visited[i*cols+j] && board[i][j] == 'O' {\n\t\t\t\tboard[i][j] = 'X'\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunc dfs(board [][]byte, i, j int, visited map[int]bool, cols int) {\n\tif i < 0 || i >= len(board) || j < 0 || j >= cols || board[i][j] != 'O' || visited[i*cols+j] {\n\t\treturn\n\t}\n\n\tvisited[i*cols+j] = true\n\n\tdfs(board, i+1, j, visited, cols)\n\tdfs(board, i-1, j, visited, cols)\n\tdfs(board, i, j+1, visited, cols)\n\tdfs(board, i, j-1, visited, cols)\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]byte, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "lines": "62"
+        }
+    ]
+}

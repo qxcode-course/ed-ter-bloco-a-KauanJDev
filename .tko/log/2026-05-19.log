@@ -24,3 +24,38 @@
 2026-05-19 17:06:01, MOVE, v:1, k:ed@ilhas, mode:EDIT
 2026-05-19 17:09:57, MOVE, v:1, k:ed@ilhas, mode:BACK
 2026-05-19 17:10:16, SELF, v:1, k:ed@ilhas, self:1, rate:100, study:20
+2026-05-19 17:26:24, SELF, v:1, k:ed@ilhas, self:1, rate:100, study:40
+2026-05-19 17:26:27, MOVE, v:1, k:ed@cercado, mode:DOWN
+2026-05-19 17:26:28, MOVE, v:1, k:ed@cercado, mode:PICK
+2026-05-19 17:26:27, MOVE, v:1, k:ed@cercado, mode:EDIT
+2026-05-19 17:26:27, MOVE, v:1, k:ed@cercado, mode:EDIT
+2026-05-19 17:53:33, EXEC, v:1, k:ed@cercado, mode:FULL, rate:33, size:52
+2026-05-19 17:53:29, MOVE, v:1, k:ed@cercado, mode:EDIT
+2026-05-19 17:53:33, MOVE, v:1, k:ed@cercado, mode:EDIT
+2026-05-19 17:59:20, EXEC, v:1, k:ed@cercado, mode:FULL, rate:33, size:52
+2026-05-19 17:59:53, EXEC, v:1, k:ed@cercado, mode:FULL, rate:0, size:52
+2026-05-19 17:59:53, MOVE, v:1, k:ed@cercado, mode:BACK
+2026-05-19 17:59:54, MOVE, v:1, k:ed@cercado, mode:PICK
+2026-05-19 18:00:00, EXEC, v:1, k:ed@cercado, mode:FULL, rate:33, size:52
+2026-05-19 18:00:32, EXEC, v:1, k:ed@cercado, mode:FULL, rate:33, size:57
+2026-05-19 18:00:37, MOVE, v:1, k:ed@cercado, mode:EDIT
+2026-05-19 18:00:32, MOVE, v:1, k:ed@cercado, mode:EDIT
+2026-05-19 18:02:18, EXEC, v:1, k:ed@cercado, mode:FULL, rate:33, size:53
+2026-05-19 18:05:48, EXEC, v:1, k:ed@cercado, mode:FULL, rate:33, size:54
+2026-05-19 18:06:07, MOVE, v:1, k:ed@cercado, mode:EDIT
+2026-05-19 18:05:48, MOVE, v:1, k:ed@cercado, mode:EDIT
+2026-05-19 18:09:51, EXEC, v:1, k:ed@cercado, mode:FULL, rate:33, size:54
+2026-05-19 18:10:27, EXEC, v:1, k:ed@cercado, mode:FULL, rate:100, size:62
+2026-05-19 18:10:31, MOVE, v:1, k:ed@cercado, mode:BACK
+2026-05-19 18:10:50, SELF, v:1, k:ed@ilhas, self:1, rate:100, study:40
+2026-05-19 18:10:59, SELF, v:1, k:ed@cercado, self:1, rate:100, study:40
+2026-05-19 18:11:05, MOVE, v:1, k:ed@pintura, mode:DOWN
+2026-05-19 18:11:08, MOVE, v:1, k:ed@pintura, mode:DOWN
+2026-05-19 18:11:22, SELF, v:1, k:ed@ilhas, self:1, rate:100, study:30
+2026-05-19 18:11:25, SELF, v:1, k:ed@cercado, self:1, rate:100, study:40
+2026-05-19 18:11:27, MOVE, v:1, k:ed@pintura, mode:DOWN
+2026-05-19 18:11:29, MOVE, v:1, k:ed@pintura, mode:DOWN
+2026-05-19 18:11:05, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-05-19 18:11:05, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-05-19 18:11:05, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-05-19 18:11:29, MOVE, v:1, k:ed@pintura, mode:EDIT
