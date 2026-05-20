@@ -1,0 +1,16 @@
+2026-05-20 12:46:01, SELF, v:1, k:ed@pintura, self:1, rate:100, study:20
+2026-05-20 12:46:28, MOVE, v:1, k:ed@wordsearch, mode:DOWN
+2026-05-20 12:46:29, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-05-20 12:46:28, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-20 12:46:28, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-20 12:46:28, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-20 12:46:28, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-20 13:00:18, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-20 13:05:33, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-20 13:10:33, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-20 13:11:02, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:100, size:92
+2026-05-20 13:11:02, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-20 13:14:25, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-20 13:24:47, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:100
+2026-05-20 13:24:48, MOVE, v:1, k:ed@wordsearch, mode:BACK
+2026-05-20 13:24:59, SELF, v:1, k:ed@wordsearch, self:1, rate:100, study:30

@@ -18,9 +18,7 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded:
-- ed@bfs
-- ed@dfs
+expanded: []
 flags:
   inbox: all
   panel: skills
@@ -28,5 +26,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@pintura
-selected_index: 13
+selected: ed@backtrack
+selected_index: 4

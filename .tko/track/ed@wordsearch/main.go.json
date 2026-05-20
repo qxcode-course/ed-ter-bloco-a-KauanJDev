@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-20_13-11-02",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]byte, word string) bool {\n\tpalavraEncontrada := false\n\tfor i := 0; i < len(grid); i++ {\n\t\tfor j := 0; j < len(grid[0]); j++ {\n\t\t\tif grid[i][j] == word[0] {\n\t\t\t\tif backtrack(grid, word, i, j, 0) {\n\t\t\t\t\tpalavraEncontrada = true\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tif palavraEncontrada {\n\t\t\tbreak\n\t\t}\n\t}\n\treturn palavraEncontrada\n}\n\nfunc backtrack(grid [][]byte, word string, row, col int, index int) bool {\n\tif index == len(word) {\n\t\treturn true\n\t}\n\tif row < 0 || row >= len(grid) || col < 0 || col >= len(grid[0]) || grid[row][col] != word[index] {\n\t\treturn false\n\t}\n\ttemp := grid[row][col]\n\tgrid[row][col] = '#'\n\tfound := backtrack(grid, word, row+1, col, index+1) ||\n\t\tbacktrack(grid, word, row-1, col, index+1) ||\n\t\tbacktrack(grid, word, row, col+1, index+1) ||\n\t\tbacktrack(grid, word, row, col-1, index+1)\n\tgrid[row][col] = temp\n\treturn found\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]byte, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []byte(scanner.Text()))\n\t}\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "59"
+        }
+    ]
+}
