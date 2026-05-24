@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-23_10-27-48",
+            "content": "@@ -78,446 +78,28 @@\n a)%0A%09\n-var arr %5B%5Dint%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09var x int%0A%09%09fmt.Scan(&x)%0A%09%09arr = append(arr, x)%0A%09%7D%0A%09fmt.Println(subsetSum(arr, soma))%0A%7D%0A%0Afunc subsetSum(arr %5B%5Dint, soma int) bool %7B%0A%09return backtrack(arr, soma, 0)%0A%7D%0A%0Afunc backtrack(arr %5B%5Dint, soma int, index int) bool %7B%0A%09if soma == 0 %7B%0A%09%09return true%0A%09%7D%0A%09if index == len(arr) %7B%0A%09%09return false%0A%09%7D%0A%09if backtrack(arr, soma-arr%5Bindex%5D, index+1) %7B%0A%09%09return true%0A%09%7D%0A%09return backtrack(arr, soma, index+1)\n+fmt.Println(n, soma)%0A\n %0A%7D%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-05-23_10-34-16",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, soma int\n\tfmt.Scan(&n, &soma)\n\tvar arr []int\n\tfor i := 0; i < n; i++ {\n\t\tvar x int\n\t\tfmt.Scan(&x)\n\t\tarr = append(arr, x)\n\t}\n\tfmt.Println(subsetSum(arr, soma))\n}\n\nfunc subsetSum(arr []int, soma int) bool {\n\treturn backtrack(arr, soma, 0)\n}\n\nfunc backtrack(arr []int, soma int, index int) bool {\n\tif soma == 0 {\n\t\treturn true\n\t}\n\tif index == len(arr) {\n\t\treturn false\n\t}\n\tif backtrack(arr, soma-arr[index], index+1) {\n\t\treturn true\n\t}\n\treturn backtrack(arr, soma, index+1)\n}\n",
+            "lines": "32"
+        }
+    ]
+}

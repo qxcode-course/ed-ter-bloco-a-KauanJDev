@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-23_11-09-50",
+            "content": "@@ -18,29 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22strings%22%0A)\n %0A%0Afu\n@@ -109,369 +109,37 @@\n l)%0A%09\n-splitString := strings.Split(sequenceString, %22%22)%0A%09fmt.Println(backtrack(splitString, l, 0))%0A%7D%0A%0Afunc backtrack(splitString %5B%5Dstring, l int, index int) %5B%5Dstring %7B%0A%09var newString %5B%5Dstring%0A%09if index == len(splitString) %7B%0A%09%09return newString%0A%09%7D%0A%09for i := 0; i %3C l; i++ %7B%0A%09%09newString = append(newString, splitString%5Bindex%5D)%0A%09%7D%0A%09return backtrack(splitString, l, index+1\n+fmt.Println(sequenceString, l\n )%0A%7D%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-05-23_11-31-20",
+            "content": "@@ -175,18 +175,20 @@\n %22)%0A%09\n-result := \n+fmt.Println(\n back\n@@ -215,28 +215,8 @@\n , 0)\n-%0A%09fmt.Println(result\n )%0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-05-23_11-31-34",
+            "content": "@@ -214,39 +214,8 @@\n  0)%0A\n-%09for _, str := range result %7B%0A%09\n %09fmt\n@@ -227,15 +227,15 @@\n tln(\n-str)%0A%09%7D\n+result)\n %0A%7D%0A%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-05-23_11-31-50",
+            "content": "@@ -489,31 +489,28 @@\n dex%5D)%0A%09%7D%0A%09re\n-sult :=\n+turn\n  backtrack(s\n@@ -537,94 +537,6 @@\n +1)%0A\n-%09for _, str := range result %7B%0A%09%09newString = append(newString, str)%0A%09%7D%0A%09return newString%0A\n %7D%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-05-23_11-32-20",
+            "content": "@@ -210,16 +210,67 @@\n , l, 0)%0A\n+%09for _, str := range result %7B%0A%09%09fmt.Println(str)%0A%09%7D\n %0A%7D%0A%0Afunc\n@@ -320,16 +320,18 @@\n ex int) \n+%5B%5D\n string %7B\n@@ -331,16 +331,40 @@\n tring %7B%0A\n+%09var newString %5B%5Dstring%0A\n %09if inde\n@@ -400,21 +400,78 @@\n urn \n-%22%22%0A%09%7D%0A%09return\n+newString%0A%09%7D%0A%09for i := 0; i %3C l; i++ %7B%0A%09%09newString = append(newString,\n  spl\n@@ -489,10 +489,23 @@\n dex%5D\n- +\n+)%0A%09%7D%0A%09result :=\n  bac\n@@ -536,10 +536,98 @@\n ndex+1)%0A\n+%09for _, str := range result %7B%0A%09%09newString = append(newString, str)%0A%09%7D%0A%09return newString%0A\n %7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-05-23_11-36-25",
+            "content": "@@ -23,16 +23,27 @@\n %0A%09%22fmt%22%0A\n+%09%22strings%22%0A\n )%0A%0Afunc \n@@ -89,17 +89,16 @@\n r l int%0A\n-%0A\n %09fmt.Sca\n@@ -126,850 +126,196 @@\n )%0A%09s\n-equencia := entrada(sequenceString)%0A%09if backtrack(0, sequencia, l) %7B%0A%09%09fmt.Println(sequencia)%0A%09%7D else %7B%0A%09%09fmt.Println(%22deu ruim%22)%0A%09%7D%0A%7D%0A%0Afunc entrada(entrada string) %5B%5Dint %7B%0A%09sequenciaString := make(%5B%5Dint, len(entrada))%0A%09for i := 0; i %3C len(entrada); i++ %7B%0A%09%09if entrada%5Bi%5D == '.' %7B%0A%09%09%09sequenciaString%5Bi%5D = 0%0A%09%09%7D else %7B%0A%09%09%09sequenciaString%5Bi%5D = int(entrada%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A%09return sequenciaString%0A%7D%0A%0Afunc posicaoValida(sequencia %5B%5Dint, index, num, distanciaMinima int) bool %7B%0A%09for i := 1; i %3C= distanciaMinima; i++ %7B%0A%09%09vizinhoEsquerda := sequencia%5Bindex-i%5D%0A%09%09vizinhoDireita := sequencia%5Bindex+i%5D%0A%09%09if vizinhoEsquerda == num %7C%7C vizinhoDireita == num %7B%0A%09%09%09return false%0A%09%09%7D%0A%09%7D%0A%09for i := 1; i %3C= distanciaMinima; i++ %7B%0A%09%09vizinhoDireita := sequencia%5Bindex+i%5D%0A%09%09vizinhoEsquerda := sequencia%5Bindex-i%5D%0A%09%09if vizinhoDireita == num %7C%7C vizinhoEsquerda == num\n+plitString := strings.Split(sequenceString, %22%22)%0A%09result := backtrack(splitString, l, 0)%0A%0A%7D%0A%0Afunc backtrack(splitString %5B%5Dstring, l int, index int) string %7B%0A%09if index == len(splitString)\n  %7B%0A\n-%09\n %09%09re\n@@ -323,17 +323,10 @@\n urn \n-false%0A%09%09%7D\n+%22%22\n %0A%09%7D%0A\n@@ -337,450 +337,62 @@\n urn \n-true%0A%7D%0A%0Afunc backtrack(pos int, sequencia %5B%5Dint, distanciaMinima int) bool %7B%0A%09if pos == len(sequencia) %7B%0A%09%09return true%0A%09%7D%0A%0A%09if sequencia%5Bpos%5D != 0 %7B%0A%09%09return backtrack(pos+1, sequencia, distanciaMinima)%0A%09%7D%0A%0A%09for i := 1; i %3C= distanciaMinima; i++ %7B%0A%09%09if posicaoValida(sequencia, pos, i, distanciaMinima) %7B%0A%09%09%09sequencia%5Bpos%5D = i%0A%09%09%09if backtrack(pos+1, sequencia, distanciaMinima) %7B%0A%09%09%09%09return true%0A%09%09%09%7D%0A%09%09%09sequencia%5Bpos%5D = 0%0A%09%09%7D%0A%09%7D%0A%09return false\n+splitString%5Bindex%5D + backtrack(splitString, l, index+1)\n %0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-05-23_17-01-02",
+            "content": "@@ -413,26 +413,25 @@\n String%5Bi%5D = \n--1\n+0\n %0A%09%09%7D else %7B%0A\n@@ -472,14 +472,8 @@\n a%5Bi%5D\n- - '0'\n )%0A%09%09\n@@ -1066,17 +1066,17 @@\n  %7B%0A%09\n+i\n f\n-or\n  pos \n-%3C\n+==\n  len\n@@ -1091,10 +1091,31 @@\n ia) \n-&&\n+%7B%0A%09%09return true%0A%09%7D%0A%0A%09if\n  seq\n@@ -1133,65 +1133,65 @@\n  != \n--1\n+0\n  %7B%0A%09%09\n-pos++%0A%09%7D%0A%09if pos == len(sequencia) %7B%0A%09%09return true\n+return backtrack(pos+1, sequencia, distanciaMinima)\n %0A%09%7D%0A\n@@ -1409,10 +1409,9 @@\n %5D = \n--1\n+0\n %0A%09%09%7D\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-05-23_17-05-10",
+            "content": "@@ -1183,25 +1183,25 @@\n %0A%0A%09for i := \n-0\n+1\n ; i %3C= dista\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-05-23_17-05-57",
+            "content": "@@ -589,33 +589,33 @@\n ool %7B%0A%09for i := \n-0\n+1\n ; i %3C= distancia\n@@ -787,33 +787,33 @@\n %09%7D%0A%09%7D%0A%09for i := \n-0\n+1\n ; i %3C= distancia\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-05-23_17-06-20",
+            "content": "@@ -596,33 +596,17 @@\n for \n-distancia\n+i\n  := \n-1; distancia\n+0; i\n  %3C= \n@@ -626,100 +626,114 @@\n ma; \n-distancia++ %7B%0A%09%09esquerda := index - distancia%0A%09%09direita := index + distancia%0A%0A%09%09if e\n+i++ %7B%0A%09%09vizinhoEsquerda := sequencia%5Bindex-i%5D%0A%09%09vizinhoDireita := sequencia%5Bindex+i%5D%0A%09%09if vizinhoE\n squerda \n %3E= 0\n@@ -732,35 +732,32 @@\n rda \n-%3E= 0 && sequencia%5Besquerda%5D\n+== num %7C%7C vizinhoDireita\n  == \n@@ -787,58 +787,175 @@\n %09%7D%0A%09\n-%09if direita %3C len(sequencia) && sequencia%5Bdireita%5D\n+%7D%0A%09for i := 0; i %3C= distanciaMinima; i++ %7B%0A%09%09vizinhoDireita := sequencia%5Bindex+i%5D%0A%09%09vizinhoEsquerda := sequencia%5Bindex-i%5D%0A%09%09if vizinhoDireita == num %7C%7C vizinhoEsquerda\n  == \n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-05-23_17-07-25",
+            "content": "@@ -188,68 +188,8 @@\n %0A%09%09f\n-or _, num := range sequencia %7B%0A%09%09%09fmt.Print(num, %22%22)%0A%09%09%7D%0A%09%09f\n mt.P\n@@ -195,16 +195,25 @@\n Println(\n+sequencia\n )%0A%09%7D els\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-23_17-08-00",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar sequenceString string\n\tvar l int\n\n\tfmt.Scan(&sequenceString, &l)\n\tsequencia := entrada(sequenceString)\n\tif backtrack(0, sequencia, l) {\n\t\tfor _, num := range sequencia {\n\t\t\tfmt.Print(num, \"\")\n\t\t}\n\t\tfmt.Println()\n\t} else {\n\t\tfmt.Println(\"deu ruim\")\n\t}\n}\n\nfunc entrada(entrada string) []int {\n\tsequenciaString := make([]int, len(entrada))\n\tfor i := 0; i < len(entrada); i++ {\n\t\tif entrada[i] == '.' {\n\t\t\tsequenciaString[i] = -1\n\t\t} else {\n\t\t\tsequenciaString[i] = int(entrada[i] - '0')\n\t\t}\n\t}\n\treturn sequenciaString\n}\n\nfunc posicaoValida(sequencia []int, index, num, distanciaMinima int) bool {\n\tfor distancia := 1; distancia <= distanciaMinima; distancia++ {\n\t\tesquerda := index - distancia\n\t\tdireita := index + distancia\n\n\t\tif esquerda >= 0 && sequencia[esquerda] == num {\n\t\t\treturn false\n\t\t}\n\t\tif direita < len(sequencia) && sequencia[direita] == num {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}\n\nfunc backtrack(pos int, sequencia []int, distanciaMinima int) bool {\n\tfor pos < len(sequencia) && sequencia[pos] != -1 {\n\t\tpos++\n\t}\n\tif pos == len(sequencia) {\n\t\treturn true\n\t}\n\n\tfor i := 0; i <= distanciaMinima; i++ {\n\t\tif posicaoValida(sequencia, pos, i, distanciaMinima) {\n\t\t\tsequencia[pos] = i\n\t\t\tif backtrack(pos+1, sequencia, distanciaMinima) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t\tsequencia[pos] = -1\n\t\t}\n\t}\n\treturn false\n}\n",
+            "lines": "68"
+        }
+    ]
+}
