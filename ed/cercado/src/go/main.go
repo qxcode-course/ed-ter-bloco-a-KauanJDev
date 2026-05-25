@@ -6,12 +6,16 @@ import (
 	"os"
 )
 
+type Point struct {
+	x, y int
+}
+
 // NÃO ALTERE A ASSINATURA DA FUNÇÃO solve
 func solve(board [][]byte) {
 	if len(board) == 0 {
 		return
 	}
-	visited := make(map[int]bool)
+	visited := make(map[Point]bool)
 	rows := len(board)
 	cols := len(board[0])
 	for i := 0; i < len(board); i++ {
@@ -24,19 +28,19 @@ func solve(board [][]byte) {
 
 	for i := 0; i < rows; i++ {
 		for j := 0; j < cols; j++ {
-			if !visited[i*cols+j] && board[i][j] == 'O' {
+			if !visited[Point{i, j}] && board[i][j] == 'O' {
 				board[i][j] = 'X'
 			}
 		}
 	}
 }
 
-func dfs(board [][]byte, i, j int, visited map[int]bool, cols int) {
-	if i < 0 || i >= len(board) || j < 0 || j >= cols || board[i][j] != 'O' || visited[i*cols+j] {
+func dfs(board [][]byte, i, j int, visited map[Point]bool, cols int) {
+	if i < 0 || i >= len(board) || j < 0 || j >= cols || board[i][j] != 'O' || visited[Point{i, j}] {
 		return
 	}
 
-	visited[i*cols+j] = true
+	visited[Point{i, j}] = true
 
 	dfs(board, i+1, j, visited, cols)
 	dfs(board, i-1, j, visited, cols)

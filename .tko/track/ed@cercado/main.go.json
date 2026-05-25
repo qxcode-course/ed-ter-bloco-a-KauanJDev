@@ -42,8 +42,18 @@
         },
         {
             "label": "2026-05-19_18-10-27",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]byte) {\n\tif len(board) == 0 {\n\t\treturn\n\t}\n\tvisited := make(map[int]bool)\n\trows := len(board)\n\tcols := len(board[0])\n\tfor i := 0; i < len(board); i++ {\n\t\tfor j := 0; j < cols; j++ {\n\t\t\tif (i == 0 || i == rows-1 || j == 0 || j == cols-1) && board[i][j] == 'O' {\n\t\t\t\tdfs(board, i, j, visited, cols)\n\t\t\t}\n\t\t}\n\t}\n\n\tfor i := 0; i < rows; i++ {\n\t\tfor j := 0; j < cols; j++ {\n\t\t\tif !visited[i*cols+j] && board[i][j] == 'O' {\n\t\t\t\tboard[i][j] = 'X'\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunc dfs(board [][]byte, i, j int, visited map[int]bool, cols int) {\n\tif i < 0 || i >= len(board) || j < 0 || j >= cols || board[i][j] != 'O' || visited[i*cols+j] {\n\t\treturn\n\t}\n\n\tvisited[i*cols+j] = true\n\n\tdfs(board, i+1, j, visited, cols)\n\tdfs(board, i-1, j, visited, cols)\n\tdfs(board, i, j+1, visited, cols)\n\tdfs(board, i, j-1, visited, cols)\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]byte, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "content": "@@ -45,47 +45,8 @@\n %0A)%0A%0A\n-struct Point struct %7B%0A%09x int%0A%09y int%0A%7D%0A%0A\n // N\n@@ -164,26 +164,24 @@\n := make(map%5B\n-Po\n int%5Dbool)%0A%09r\n@@ -488,27 +488,24 @@\n visited%5B\n-Point%7Bi, j%7D\n+i*cols+j\n %5D && boa\n@@ -606,18 +606,16 @@\n ted map%5B\n-Po\n int%5Dbool\n@@ -712,27 +712,24 @@\n visited%5B\n-Point%7Bi, j%7D\n+i*cols+j\n %5D %7B%0A%09%09re\n@@ -750,19 +750,16 @@\n ted%5B\n-Point%7Bi, j%7D\n+i*cols+j\n %5D = \n",
             "lines": "62"
+        },
+        {
+            "label": "2026-05-25_11-19-21",
+            "content": "@@ -45,12 +45,14 @@\n %0A)%0A%0A\n-type\n+struct\n  Poi\n@@ -65,18 +65,22 @@\n uct %7B%0A%09x\n-,\n  \n+int%0A%09\n y int%0A%7D%0A\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-05-25_11-19-43",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Point struct {\n\tx, y int\n}\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]byte) {\n\tif len(board) == 0 {\n\t\treturn\n\t}\n\tvisited := make(map[Point]bool)\n\trows := len(board)\n\tcols := len(board[0])\n\tfor i := 0; i < len(board); i++ {\n\t\tfor j := 0; j < cols; j++ {\n\t\t\tif (i == 0 || i == rows-1 || j == 0 || j == cols-1) && board[i][j] == 'O' {\n\t\t\t\tdfs(board, i, j, visited, cols)\n\t\t\t}\n\t\t}\n\t}\n\n\tfor i := 0; i < rows; i++ {\n\t\tfor j := 0; j < cols; j++ {\n\t\t\tif !visited[Point{i, j}] && board[i][j] == 'O' {\n\t\t\t\tboard[i][j] = 'X'\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunc dfs(board [][]byte, i, j int, visited map[Point]bool, cols int) {\n\tif i < 0 || i >= len(board) || j < 0 || j >= cols || board[i][j] != 'O' || visited[Point{i, j}] {\n\t\treturn\n\t}\n\n\tvisited[Point{i, j}] = true\n\n\tdfs(board, i+1, j, visited, cols)\n\tdfs(board, i-1, j, visited, cols)\n\tdfs(board, i, j+1, visited, cols)\n\tdfs(board, i, j-1, visited, cols)\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]byte, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "lines": "66"
         }
     ]
 }
