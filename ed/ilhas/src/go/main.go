@@ -6,6 +6,10 @@ import (
 	"os"
 )
 
+type Pos struct {
+	l, c int
+}
+
 // Não modifique a assinatura da função numIslands
 // Ela é a função que será chamada no LeetCode para resolver o problema
 func numIslands(grid [][]byte) int {
@@ -13,13 +17,13 @@ func numIslands(grid [][]byte) int {
 		return 0
 	}
 
-	visited := make(map[int]bool)
+	visited := make(map[Pos]bool)
 	cols := len(grid[0])
 	count := 0
 
 	for i := 0; i < len(grid); i++ {
 		for j := 0; j < len(grid[0]); j++ {
-			if grid[i][j] == '1' && !visited[i*cols+j] {
+			if grid[i][j] == '1' && !visited[Pos{i, j}] {
 				count++
 				dfs(grid, i, j, visited, cols)
 			}
@@ -28,16 +32,17 @@ func numIslands(grid [][]byte) int {
 	return count
 }
 
-func dfs(grid [][]byte, i int, j int, visited map[int]bool, cols int) {
-	if i < 0 || i >= len(grid) || j < 0 || j >= len(grid[0]) || grid[i][j] == '0' {
+func dfs(grid [][]byte, i int, j int, visited map[Pos]bool, cols int) {
+	pos := Pos{i, j}
+	if i < 0 || i >= len(grid) || j < 0 || j >= cols {
 		return
 	}
 
-	key := i*cols + j
-	if visited[key] {
+	if visited[pos] || grid[i][j] == '0' {
 		return
 	}
-	visited[key] = true
+
+	visited[pos] = true
 
 	dfs(grid, i, j+1, visited, cols)
 	dfs(grid, i, j-1, visited, cols)

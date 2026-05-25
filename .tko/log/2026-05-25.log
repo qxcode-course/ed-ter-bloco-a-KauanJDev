@@ -1,0 +1,6 @@
+2026-05-25 11:12:46, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-05-25 11:12:47, EXEC, v:1, k:ed@ilhas, mode:FULL, size:67, fail:COMP
+2026-05-25 11:13:44, EXEC, v:1, k:ed@ilhas, mode:FULL, fail:COMP
+2026-05-25 11:14:39, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-05-25 11:14:40, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100, size:67
+2026-05-25 11:14:43, MOVE, v:1, k:ed@ilhas, mode:BACK
