@@ -5,11 +5,11 @@ import "fmt"
 func main() {
 	var n, soma int
 	fmt.Scan(&n, &soma)
-	var arr []int
+	arr := make([]int, n)
 	for i := 0; i < n; i++ {
-		var x int
-		fmt.Scan(&x)
-		arr = append(arr, x)
+		var num int
+		fmt.Scan(&num)
+		arr[i] = num
 	}
 	fmt.Println(subsetSum(arr, soma))
 }

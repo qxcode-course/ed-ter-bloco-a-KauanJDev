@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func main() {
@@ -20,16 +21,16 @@ func main() {
 	}
 }
 
-func entrada(entrada string) []int {
-	sequenciaString := make([]int, len(entrada))
-	for i := 0; i < len(entrada); i++ {
-		if entrada[i] == '.' {
-			sequenciaString[i] = -1
-		} else {
-			sequenciaString[i] = int(entrada[i] - '0')
-		}
-	}
-	return sequenciaString
+func entrada(s string) []int {
+    sequencia := make([]int, len(s))
+    for i, c := range s {
+        if c == '.' {
+            sequencia[i] = -1
+        } else {
+            sequencia[i], _ = strconv.Atoi(string(c))
+        }
+    }
+    return sequencia
 }
 
 func posicaoValida(sequencia []int, index, num, distanciaMinima int) bool {

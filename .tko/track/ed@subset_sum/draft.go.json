@@ -7,7 +7,27 @@
         },
         {
             "label": "2026-05-23_10-34-16",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, soma int\n\tfmt.Scan(&n, &soma)\n\tvar arr []int\n\tfor i := 0; i < n; i++ {\n\t\tvar x int\n\t\tfmt.Scan(&x)\n\t\tarr = append(arr, x)\n\t}\n\tfmt.Println(subsetSum(arr, soma))\n}\n\nfunc subsetSum(arr []int, soma int) bool {\n\treturn backtrack(arr, soma, 0)\n}\n\nfunc backtrack(arr []int, soma int, index int) bool {\n\tif soma == 0 {\n\t\treturn true\n\t}\n\tif index == len(arr) {\n\t\treturn false\n\t}\n\tif backtrack(arr, soma-arr[index], index+1) {\n\t\treturn true\n\t}\n\treturn backtrack(arr, soma, index+1)\n}\n",
+            "content": "@@ -89,17 +89,16 @@\n  %5B%5Dint%0A%09\n-o\n for i :=\n@@ -124,27 +124,16 @@\n var \n-num\n+x\n  int%0A%09%09\n-arr%5Bi%5D = \n fmt.\n@@ -142,11 +142,32 @@\n an(&\n-num\n+x)%0A%09%09arr = append(arr, x\n )%0A%09%7D\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-05-25_13-47-33",
+            "content": "@@ -89,16 +89,17 @@\n  %5B%5Dint%0A%09\n+o\n for i :=\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-05-25_13-48-25",
+            "content": "@@ -78,29 +78,21 @@\n a)%0A%09\n+var \n arr \n-:= make(\n %5B%5Dint\n-, n)\n %0A%09fo\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-05-25_13-48-45",
+            "content": "@@ -138,16 +138,25 @@\n m int%0A%09%09\n+arr%5Bi%5D = \n fmt.Scan\n@@ -166,23 +166,8 @@\n um)%0A\n-%09%09arr%5Bi%5D = num%0A\n %09%7D%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-05-25_13-49-40",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, soma int\n\tfmt.Scan(&n, &soma)\n\tarr := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tvar num int\n\t\tfmt.Scan(&num)\n\t\tarr[i] = num\n\t}\n\tfmt.Println(subsetSum(arr, soma))\n}\n\nfunc subsetSum(arr []int, soma int) bool {\n\treturn backtrack(arr, soma, 0)\n}\n\nfunc backtrack(arr []int, soma int, index int) bool {\n\tif soma == 0 {\n\t\treturn true\n\t}\n\tif index == len(arr) {\n\t\treturn false\n\t}\n\tif backtrack(arr, soma-arr[index], index+1) {\n\t\treturn true\n\t}\n\treturn backtrack(arr, soma, index+1)\n}\n",
             "lines": "32"
         }
     ]
