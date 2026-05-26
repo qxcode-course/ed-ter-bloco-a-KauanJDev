@@ -29,9 +29,11 @@ func backtrack(grid [][]byte, word string, row, col int, index int) bool {
 	if index == len(word) {
 		return true
 	}
+
 	if row < 0 || row >= len(grid) || col < 0 || col >= len(grid[0]) || grid[row][col] != word[index] {
 		return false
 	}
+	
 	temp := grid[row][col]
 	grid[row][col] = '#'
 	found := backtrack(grid, word, row+1, col, index+1) ||

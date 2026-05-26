@@ -1,0 +1,31 @@
+2026-05-26 17:16:56, MOVE, v:1, k:ed@cercado, mode:PICK
+2026-05-26 17:16:57, EXEC, v:1, k:ed@cercado, mode:FULL, size:72, fail:COMP
+2026-05-26 17:17:57, EXEC, v:1, k:ed@cercado, mode:FULL, rate:100, size:72
+2026-05-26 17:17:58, MOVE, v:1, k:ed@cercado, mode:BACK
+2026-05-26 17:18:27, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-05-26 17:19:33, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100, size:72
+2026-05-26 17:21:29, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-05-26 17:22:24, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-05-26 17:22:43, MOVE, v:1, k:ed@ilhas, mode:BACK
+2026-05-26 17:28:39, MOVE, v:1, k:ed@rotten, mode:DOWN
+2026-05-26 17:29:03, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-05-26 17:33:45, EXEC, v:1, k:ed@rotten, mode:FULL, rate:0, size:14
+2026-05-26 17:44:37, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-05-26 17:45:13, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-05-26 17:45:15, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-05-26 18:17:32, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-05-26 18:35:01, EXEC, v:1, k:ed@rotten, mode:LOCK, rate:100, size:70
+2026-05-26 18:35:06, EXEC, v:1, k:ed@rotten, mode:LOCK, rate:100
+2026-05-26 18:35:14, EXEC, v:1, k:ed@rotten, mode:LOCK, rate:100
+2026-05-26 18:35:16, EXEC, v:1, k:ed@rotten, mode:LOCK, rate:100
+2026-05-26 18:35:20, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-05-26 18:36:57, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-05-26 18:37:01, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-05-26 18:37:08, MOVE, v:1, k:ed@caminho, mode:DOWN
+2026-05-26 18:37:09, MOVE, v:1, k:ed@detonate, mode:DOWN
+2026-05-26 18:37:24, MOVE, v:1, k:ed@bufferring, mode:DOWN
+2026-05-26 18:37:33, MOVE, v:1, k:ed@queimando, mode:DOWN
+2026-05-26 18:37:35, MOVE, v:1, k:ed@pilhado, mode:DOWN
+2026-05-26 18:37:37, MOVE, v:1, k:ed@balanceada, mode:DOWN
+2026-05-26 18:37:43, MOVE, v:1, k:ed@caminhao, mode:DOWN
+2026-05-26 18:37:44, MOVE, v:1, k:ed@polonesa, mode:DOWN

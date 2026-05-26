@@ -5,8 +5,8 @@ Você pode criar quantos rascunhos quiser. Eles serão rastreados pela chave key
 Renomeie o nome da pasta para renomear o rascunho. Exclua a pasta para excluir o rascunho.
 Sinta-se à vontade para organizar seus rascunhos em subpastas dentro do sandbox, se desejar.
 
-## sandbox
+## sandbox <!-- @sandbox deps=none factor=1 xpgoal=0 active=1 -->
 
 <!--autoload_cluster=.-->
-- [ ]`@user_001 `[aula0listas02](user_001/README.md)
+- [ ] `@user_001 🛠️ 👤 type=make xp=1 tier=1 loss=part :self` [aula0listas02](user_001/README.md)
 
