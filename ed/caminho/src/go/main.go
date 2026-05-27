@@ -11,7 +11,12 @@ type Pos struct {
 }
 
 func (p Pos) getNeig() []Pos {
-	return nil
+	return []Pos{
+		{p.l - 1, p.c},
+		{p.l + 1, p.c}, 
+		{p.l, p.c - 1},
+		{p.l, p.c + 1},
+	}
 }
 
 func inside(grid [][]rune, pos Pos) bool {
@@ -25,10 +30,35 @@ func match(grid [][]rune, pos Pos, char rune) bool {
 }
 
 func search(grid [][]rune, startPos Pos, endPos Pos) {
-	_, _, _ = grid, startPos, endPos
+	queue := NewQueue[Pos]()
+	queue.Enqueue(startPos)
+	visited := make(map[Pos]bool)
+	visited[startPos] = true
+	way := make(map[Pos]Pos) 
+
+	for !queue.IsEmpty() {
+		currentPos, _ := queue.Dequeue()
+
+		if currentPos == endPos {
+			voltar(grid, currentPos, way)
+			return
+		}
+
+		for _, neighbor := range currentPos.getNeig() {
+			if match(grid, neighbor, ' ') && !visited[neighbor] {
+				visited[neighbor] = true
+				queue.Enqueue(neighbor)
+				way[neighbor] = currentPos
+			}
+		}	
+	}
 }
 
-func voltar()
+func voltar(grid [][]rune, startPos Pos, way map[Pos]Pos) {
+	for pos := startPos; pos != (Pos{}); pos = way[pos] {
+		grid[pos.l][pos.c] = '.'
+	}
+}
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)

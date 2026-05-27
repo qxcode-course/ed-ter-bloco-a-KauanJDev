@@ -29,3 +29,9 @@
 2026-05-26 18:37:37, MOVE, v:1, k:ed@balanceada, mode:DOWN
 2026-05-26 18:37:43, MOVE, v:1, k:ed@caminhao, mode:DOWN
 2026-05-26 18:37:44, MOVE, v:1, k:ed@polonesa, mode:DOWN
+2026-05-26 22:39:36, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-05-26 22:39:38, EXEC, v:1, k:ed@rotten, mode:FULL, rate:100, size:76
+2026-05-26 22:39:39, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-05-26 22:39:56, SELF, v:1, k:ed@rotten, self:1, rate:100, study:110
+2026-05-26 22:41:52, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-05-26 22:41:54, EXEC, v:1, k:ed@caminho, mode:FULL, size:125, fail:COMP

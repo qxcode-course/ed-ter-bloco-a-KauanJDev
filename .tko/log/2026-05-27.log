@@ -1,0 +1,35 @@
+2026-05-27 09:52:28, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-05-27 09:54:48, EXEC, v:1, k:ed@caminho, mode:FULL, rate:0, size:132
+2026-05-27 09:55:20, EXEC, v:1, k:ed@caminho, mode:LOCK, rate:0, size:132
+2026-05-27 09:56:33, EXEC, v:1, k:ed@caminho, mode:LOCK, size:135, fail:COMP
+2026-05-27 09:56:40, EXEC, v:1, k:ed@caminho, mode:LOCK, rate:0, size:136
+2026-05-27 09:58:52, EXEC, v:1, k:ed@caminho, mode:LOCK, rate:0, size:136
+2026-05-27 10:00:16, EXEC, v:1, k:ed@caminho, mode:LOCK, rate:0, size:137
+2026-05-27 10:01:26, EXEC, v:1, k:ed@caminho, mode:LOCK, rate:0, size:141
+2026-05-27 10:01:56, EXEC, v:1, k:ed@caminho, mode:LOCK, rate:0, size:141
+2026-05-27 10:06:04, EXEC, v:1, k:ed@caminho, mode:LOCK, size:141, fail:COMP
+2026-05-27 10:06:52, EXEC, v:1, k:ed@caminho, mode:LOCK, fail:COMP
+2026-05-27 10:07:21, EXEC, v:1, k:ed@caminho, mode:LOCK, rate:100, size:141
+2026-05-27 10:07:31, EXEC, v:1, k:ed@caminho, mode:LOCK, rate:100
+2026-05-27 10:07:37, EXEC, v:1, k:ed@caminho, mode:LOCK, rate:100
+2026-05-27 10:07:55, EXEC, v:1, k:ed@caminho, mode:FULL, rate:100
+2026-05-27 10:08:32, MOVE, v:1, k:ed@caminho, mode:BACK
+2026-05-27 10:08:44, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-05-27 10:08:57, EXEC, v:1, k:ed@caminho, mode:LOCK, rate:100
+2026-05-27 10:09:28, MOVE, v:1, k:ed@caminho, mode:BACK
+2026-05-27 10:10:07, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-05-27 10:10:16, MOVE, v:1, k:ed@caminho, mode:BACK
+2026-05-27 10:11:12, MOVE, v:1, k:ed@caminho, mode:DOWN
+2026-05-27 10:11:32, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-05-27 10:11:33, EXEC, v:1, k:ed@caminho, mode:FULL, size:111, fail:COMP
+2026-05-27 10:11:35, MOVE, v:1, k:ed@caminho, mode:BACK
+2026-05-27 10:11:46, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-05-27 10:12:34, EXEC, v:1, k:ed@caminho, mode:LOCK, rate:100, size:141
+2026-05-27 10:12:38, EXEC, v:1, k:ed@caminho, mode:FULL, rate:100
+2026-05-27 10:12:47, EXEC, v:1, k:ed@caminho, mode:FULL, rate:100
+2026-05-27 10:12:58, MOVE, v:1, k:ed@caminho, mode:BACK
+2026-05-27 10:13:00, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-05-27 10:27:21, MOVE, v:1, k:ed@caminho, mode:BACK
+2026-05-27 10:27:28, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-05-27 10:27:30, MOVE, v:1, k:ed@caminho, mode:BACK
+2026-05-27 10:27:53, SELF, v:1, k:ed@caminho, self:1, rate:100, study:35
