@@ -1,0 +1,33 @@
+2026-05-30 13:54:01, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-05-30 13:54:04, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0, size:13
+2026-05-30 14:00:48, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-05-30 14:00:50, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-05-30 14:08:59, EXEC, v:1, k:ed@detonate, mode:LOCK, rate:0, size:54
+2026-05-30 14:18:15, EXEC, v:1, k:ed@detonate, mode:LOCK, size:77, fail:COMP
+2026-05-30 14:21:04, EXEC, v:1, k:ed@detonate, mode:LOCK, size:78, fail:COMP
+2026-05-30 14:21:14, EXEC, v:1, k:ed@detonate, mode:FULL, fail:COMP
+2026-05-30 14:21:45, EXEC, v:1, k:ed@detonate, mode:LOCK, fail:COMP
+2026-05-30 14:21:50, EXEC, v:1, k:ed@detonate, mode:LOCK, fail:COMP
+2026-05-30 14:24:21, EXEC, v:1, k:ed@detonate, mode:LOCK, size:82, fail:COMP
+2026-05-30 14:25:20, EXEC, v:1, k:ed@detonate, mode:LOCK, size:83, fail:COMP
+2026-05-30 14:26:19, EXEC, v:1, k:ed@detonate, mode:LOCK, rate:0, size:83
+2026-05-30 14:28:17, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0
+2026-05-30 14:28:50, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-05-30 14:28:58, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-05-30 14:29:40, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0, size:84
+2026-05-30 14:29:43, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0
+2026-05-30 14:30:35, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-05-30 19:53:18, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-05-30 19:53:29, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-05-30 19:53:52, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-05-30 19:54:32, EXEC, v:1, k:ed@detonate, mode:LOCK, size:80, fail:COMP
+2026-05-30 19:55:07, EXEC, v:1, k:ed@detonate, mode:LOCK, size:81, fail:COMP
+2026-05-30 19:55:29, EXEC, v:1, k:ed@detonate, mode:LOCK, rate:100, size:81
+2026-05-30 19:55:30, EXEC, v:1, k:ed@detonate, mode:LOCK, rate:100
+2026-05-30 19:55:35, EXEC, v:1, k:ed@detonate, mode:LOCK, rate:100
+2026-05-30 19:55:38, EXEC, v:1, k:ed@detonate, mode:LOCK, rate:100
+2026-05-30 19:55:41, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-05-30 19:55:50, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-05-30 19:55:52, EXEC, v:1, k:ed@detonate, mode:FULL, rate:100
+2026-05-30 19:55:53, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-05-30 19:56:07, SELF, v:1, k:ed@detonate, self:1, rate:100, study:40
