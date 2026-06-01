@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"strconv"
 )
 
 type Deque struct {
@@ -43,6 +44,68 @@ func (b *Deque) Debug() string {
 	return strings.Join(result, " |")
 }
 
+func (b *Deque) Len() int {
+	return b.size
+}
+
+func (b *Deque) Front() (int, error) {
+	if b.size == 0 {
+		return 0, fmt.Errorf("deque vazio")
+	}
+	return b.data[b.front], nil
+}
+
+func (b *Deque) Back() (int, error) {
+	if b.size == 0 {
+		return 0, fmt.Errorf("deque vazio")
+	}
+	index := (b.front + b.size - 1) % b.capacity
+	return b.data[index], nil
+}
+
+func (b *Deque) resize(newCap int) {
+	newData := make([]int, newCap)
+	for i := range b.size {
+		newData[i] = b.data[(b.front + i) % b.capacity]
+	}
+	b.data = newData
+	b.front = 0
+	b.capacity = newCap
+}
+
+func (b *Deque) PopBack() error {
+	if b.size == 0 {
+		return fmt.Errorf("fail: buffer vazio")
+	}
+	b.size--
+	return nil
+}
+
+func (b *Deque) PopFront() error {
+	if b.size == 0 {
+		return fmt.Errorf("fail: buffer vazio")
+	}
+	b.front = (b.front + 1) % b.capacity
+	b.size--
+	return nil
+}
+
+func (b *Deque) PushBack(val int) {
+	if b.size == b.capacity {
+		b.resize(b.capacity * 2)
+	}
+	index := (b.front + b.size) % b.capacity
+	b.data[index] = val
+	b.size++
+}
+
+func (b *Deque) Clear() {
+	b.data = make([]int, 4)
+	b.front = 0
+	b.size = 0
+	b.capacity = 4
+}
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	buf := &Deque{data: make([]int, 4), capacity: 4}
@@ -68,25 +131,25 @@ func main() {
 		case "debug":
 			fmt.Println(buf.Debug())
 		case "size":
-			// fmt.Println(buf.Len())
+			fmt.Println(buf.Len())
 		case "push_back":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	buf.PushBack(num)
-			// }
+			for _, v := range args[1:] {
+				num, _ := strconv.Atoi(v)
+				buf.PushBack(num)
+			}	
 		case "push_front":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	buf.PushFront(num)
-			// }
+			//for _, v := range args[1:] {
+			//	num, _ := strconv.Atoi(v)
+			//	buf.PushFront(num)
+			//}
 		case "pop_back":
-			// if err := buf.PopBack(); err != nil {
-			// 	fmt.Println(err)
-			// }
+			if err := buf.PopBack(); err != nil {
+				fmt.Println(err)
+			}
 		case "pop_front":
-			// if err := buf.PopFront(); err != nil {
-			// 	fmt.Println(err)
-			// }
+			if err := buf.PopFront(); err != nil {
+				fmt.Println(err)
+			}
 		case "front":
 			// if val, err := buf.Front(); err != nil {
 			// 	fmt.Println(err)
@@ -100,7 +163,7 @@ func main() {
 			// 	fmt.Println(val)
 			// }
 		case "clear":
-			// buf.Clear()
+			buf.Clear()
 		case "end":
 			return
 		default:

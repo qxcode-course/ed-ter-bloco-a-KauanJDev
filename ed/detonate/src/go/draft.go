@@ -33,7 +33,6 @@ func maxDetonation(bombs [][]int) int {
     n := len(bombs)
     graph := make(map[int][]int)
     for i := 0; i < n; i++ {
-
         for j := 0; j < n; j++ {
             if i != j && canDetonate(bombs[i], bombs[j]) {
                 graph[i] = append(graph[i], j)
@@ -73,9 +72,16 @@ func bfs(graph map[int][]int, start int) map[int]bool {
 }
 
 func canDetonate(bomb1, bomb2 []int) bool {
-	xi, yi, ri := bomb1[0], bomb1[1], bomb1[2]
-	xj, yj := bomb2[0], bomb2[1]
-	return (xi-xj)*(xi-xj)+(yi-yj)*(yi-yj) <= ri*ri
+    xi, yi, ri := bomb1[0], bomb1[1], bomb1[2]
+    xj, yj     := bomb2[0], bomb2[1]
+
+    dx := xi - xj
+    dy := yi - yj
+
+    distanciaQuadrado := dx*dx + dy*dy
+    raioQuadrado      := ri * ri
+
+    return distanciaQuadrado <= raioQuadrado
 }
 
 
