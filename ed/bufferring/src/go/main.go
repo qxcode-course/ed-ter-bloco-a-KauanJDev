@@ -4,8 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strings"
 	"strconv"
+	"strings"
 )
 
 type Deque struct {
@@ -66,7 +66,7 @@ func (b *Deque) Back() (int, error) {
 func (b *Deque) resize(newCap int) {
 	newData := make([]int, newCap)
 	for i := range b.size {
-		newData[i] = b.data[(b.front + i) % b.capacity]
+		newData[i] = b.data[(b.front+i)%b.capacity]
 	}
 	b.data = newData
 	b.front = 0
@@ -99,11 +99,18 @@ func (b *Deque) PushBack(val int) {
 	b.size++
 }
 
+func (b *Deque) PushFront(val int) {
+	if b.size == b.capacity {
+		b.resize(b.capacity * 2)
+	}
+	b.front = (b.front - 1 + b.capacity) % b.capacity
+	b.data[b.front] = val
+	b.size++
+}
+
 func (b *Deque) Clear() {
-	b.data = make([]int, 4)
 	b.front = 0
 	b.size = 0
-	b.capacity = 4
 }
 
 func main() {
@@ -136,12 +143,12 @@ func main() {
 			for _, v := range args[1:] {
 				num, _ := strconv.Atoi(v)
 				buf.PushBack(num)
-			}	
+			}
 		case "push_front":
-			//for _, v := range args[1:] {
-			//	num, _ := strconv.Atoi(v)
-			//	buf.PushFront(num)
-			//}
+			for _, v := range args[1:] {
+				num, _ := strconv.Atoi(v)
+				buf.PushFront(num)
+			}
 		case "pop_back":
 			if err := buf.PopBack(); err != nil {
 				fmt.Println(err)
@@ -151,17 +158,17 @@ func main() {
 				fmt.Println(err)
 			}
 		case "front":
-			// if val, err := buf.Front(); err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(val)
-			// }
+			if val, err := buf.Front(); err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Println(val)
+			}
 		case "back":
-			// if val, err := buf.Back(); err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(val)
-			// }
+			if val, err := buf.Back(); err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Println(val)
+			}
 		case "clear":
 			buf.Clear()
 		case "end":

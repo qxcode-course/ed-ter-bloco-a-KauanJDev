@@ -1,0 +1,47 @@
+2026-06-02 08:20:29, MOVE, v:1, k:ed@bufferring, mode:PICK
+2026-06-02 08:23:05, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:33, size:182
+2026-06-02 08:24:57, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-02 08:25:34, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:183
+2026-06-02 08:26:27, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:0, size:184
+2026-06-02 08:28:31, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:182
+2026-06-02 08:30:08, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-02 08:30:16, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:182
+2026-06-02 08:31:59, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:33, size:182
+2026-06-02 08:32:20, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:182
+2026-06-02 08:34:31, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:182
+2026-06-02 08:34:30, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-02 08:36:05, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:183
+2026-06-02 08:40:04, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:180
+2026-06-02 08:40:01, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-02 08:41:02, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:0, size:182
+2026-06-02 08:43:36, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:180
+2026-06-02 08:43:28, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-02 08:49:12, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-02 08:52:03, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:180
+2026-06-02 08:52:56, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:33, size:180
+2026-06-02 08:53:16, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:180
+2026-06-02 08:53:36, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:180
+2026-06-02 08:54:02, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:33, size:180
+2026-06-02 08:54:18, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:180
+2026-06-02 08:54:35, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66
+2026-06-02 08:54:36, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66
+2026-06-02 08:54:33, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-02 08:55:27, MOVE, v:1, k:ed@bufferring, mode:BACK
+2026-06-02 09:58:50, MOVE, v:1, k:ed@bufferring, mode:PICK
+2026-06-02 09:58:52, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66
+2026-06-02 09:59:59, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:180
+2026-06-02 10:02:09, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:180
+2026-06-02 10:02:16, EXEC, v:1, k:ed@bufferring, mode:FREE
+2026-06-02 10:03:27, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-06-02 10:04:04, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:180
+2026-06-02 10:04:09, MOVE, v:1, k:ed@bufferring, mode:BACK
+2026-06-02 10:04:10, MOVE, v:1, k:ed@bufferring, mode:PICK
+2026-06-02 10:04:12, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66
+2026-06-02 10:04:59, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66
+2026-06-02 10:05:44, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:83, size:180
+2026-06-02 10:06:50, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:100, size:180
+2026-06-02 10:06:57, MOVE, v:1, k:ed@bufferring, mode:BACK
+2026-06-02 10:06:57, MOVE, v:1, k:ed@bufferring, mode:PICK
+2026-06-02 10:06:59, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:100
+2026-06-02 10:07:01, MOVE, v:1, k:ed@bufferring, mode:BACK
+2026-06-02 10:07:24, SELF, v:1, k:ed@bufferring, self:1, rate:100, study:80
