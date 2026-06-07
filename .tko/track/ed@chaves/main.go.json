@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-07_17-42-44",
+            "content": "@@ -270,68 +270,8 @@\n 1%5D)%0A\n-%09%09fmt.Printf(%22Y = %25d%5Cn%22, resultados%5Bi%5D%5B0%5D*resultados%5Bi%5D%5B1%5D)%0A\n %09%7D%0A%7D\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-06-07_17-43-09",
+            "content": "@@ -182,78 +182,8 @@\n n%0A%09%7D\n-%0A%0A%7D%0A%0Afunc resultadoJogos(mm, nn int) string %7B%0A%09fila := NewQueue%5Bint%5D()\n %0A%09fo\n@@ -193,18 +193,17 @@\n  := \n-1\n+0\n ; i %3C\n-= mm\n+ 15\n ; i+\n@@ -213,182 +213,126 @@\n %0A%09%09f\n-ila.Enqueue(i)%0A%09%7D%0A%0A%09for fila.items.Len() %3E 1 %7B%0A%09%09for i := 0; i %3C nn-1; i++ %7B%0A%09%09%09fila.Enqueue(fila.Dequeue())%0A%09%09%7D%0A%09%09fila.Dequeue()%0A%09%7D%0A%0A%09return \n+mt.Printf(%22X = %25d%5Cn%22, resultados%5Bi%5D%5B0%5D+resultados%5Bi%5D%5B1%5D)%0A%09%09\n fmt.\n-Sp\n+P\n rintf(%22\n-%25d%22, fila.Dequeue())\n+Y = %25d%5Cn%22, resultados%5Bi%5D%5B0%5D*resultados%5Bi%5D%5B1%5D)%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-06-07_17-47-27",
+            "content": "@@ -182,104 +182,8 @@\n n%0A%09%7D\n-%0A%09for i := 0; i %3C 15; i++ %7B%0A%09%09fmt.Println(resultadoJogos(resultados%5Bi%5D%5B0%5D, resultados%5Bi%5D%5B1%5D))%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-06-07_17-47-39",
+            "content": "@@ -221,18 +221,11 @@\n rint\n-f(%22%25d%5Cn%22, \n+ln(\n resu\n@@ -311,19 +311,22 @@\n nn int) \n+str\n in\n-t\n+g\n  %7B%0A%09fila\n@@ -349,20 +349,8 @@\n %5D()%0A\n-%09count := 0%0A\n %09for\n@@ -510,18 +510,8 @@\n e()%0A\n-%09%09count++%0A\n %09%7D%0A%0A\n@@ -522,12 +522,40 @@\n urn \n-count\n+fmt.Sprintf(%22%25d%22, fila.Dequeue())\n %0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-06-07_17-49-18",
+            "content": "@@ -184,125 +184,149 @@\n %09%7D%0A%09\n-indice, _ := resultadoJogos(resultados)%0A%09fmt.Println(indice)%0A%7D%0A%0Afunc resultadoJogos(resultados %5B15%5D%5B2%5Dint) (int,\n+for i := 0; i %3C 15; i++ %7B%0A%09%09fmt.Printf(%22%25d%5Cn%22, resultadoJogos(resultados%5Bi%5D%5B0%5D, resultados%5Bi%5D%5B1%5D))%0A%09%7D%0A%0A%7D%0A%0Afunc resultadoJogos(mm, nn int)\n  int\n-)\n  %7B%0A%09\n@@ -346,592 +346,210 @@\n eue%5B\n-str\n in\n-g\n+t\n %5D()%0A%09\n-fila.Enqueue(%22A%22)%0A%09fila.Enqueue(%22B%22)%0A%09fila.Enqueue(%22C%22)%0A%09fila.Enqueue(%22D%22)%0A%09fila.Enqueue(%22E%22)%0A%09fila.Enqueue(%22F%22)%0A%09fila.Enqueue(%22G%22)%0A%09fila.Enqueue(%22H%22)%0A%09fila.Enqueue(%22I%22)%0A%09fila.Enqueue(%22J%22)%0A%09fila.Enqueue(%22K%22)%0A%09fila.Enqueue(%22L%22)%0A%09fila.Enqueue(%22M%22)%0A%09fila.Enqueue(%22N%22)%0A%09fila.Enqueue(%22O%22)%0A%09fila.Enqueue(%22P%22)%0A%09indice := 0%0A%09for !fila.IsEmpty() %7B%0A%09%09timeDireita := fila.Dequeue()%0A%09%09timeEsquerda := fila.Dequeue()%0A%0A%09%09mm, nn := resultados%5Bindice%5D%5B0%5D, resultados%5Bindice%5D%5B1%5D%0A%09%09indice++%0A%09%09if mm %3E nn %7B%0A%09%09%09fila.Enqueue(timeEsquerda)%0A%09%09%7D else %7B%0A%09\n+count := 0%0A%09for i := 1; i %3C= mm; i++ %7B%0A%09%09fila.Enqueue(i)%0A%09%7D%0A%0A%09for fila.items.Len() %3E 1 %7B%0A%09%09for i := 0; i %3C nn-1; i++ %7B%0A%09%09%09fila.Enqueue(fila.Dequeue())%0A%09%09%7D%0A\n %09%09fila.\n-En\n+De\n queue(\n-timeDireita)%0A%09%09%7D\n+)%0A%09%09count++\n %0A%09%7D%0A\n+%0A\n %09return \n indi\n@@ -548,16 +548,12 @@\n urn \n-indice, 0\n+count\n %0A%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-06-07_18-21-17",
+            "content": "@@ -650,16 +650,17 @@\n  0%0A%09for \n+!\n fila.IsE\n@@ -669,17 +669,8 @@\n ty()\n- == false\n  %7B%0A%09\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-07_18-22-12",
+            "content": "@@ -180,23 +180,25 @@\n  nn%0A%09%7D%0A%09\n-campeao\n+indice, _\n  := resu\n@@ -237,15 +237,14 @@\n tln(\n-campeao\n+indice\n )%0A%7D%0A\n@@ -287,19 +287,26 @@\n %5B2%5Dint) \n+(\n int\n+, int)\n  %7B%0A%09fila\n@@ -916,11 +916,14 @@\n n indice\n+, 0\n %0A%7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-07_18-22-53",
+            "content": "@@ -674,23 +674,22 @@\n %7B%0A%09%09time\n-Esquerd\n+Direit\n a := fil\n@@ -702,30 +702,31 @@\n eue()%0A%09%09time\n-Direit\n+Esquerd\n a := fila.De\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-07_18-24-20",
+            "content": "@@ -651,17 +651,26 @@\n ila.\n-Len() %3E 1\n+IsEmpty() == false\n  %7B%0A%09\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-07_18-29-22",
+            "content": "@@ -286,22 +286,19 @@\n %5B2%5Dint) \n-str\n in\n-g\n+t\n  %7B%0A%09fila\n@@ -893,25 +893,17 @@\n %09return \n-fila.Dequeue()\n+indice\n %0A%7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-07_18-29-46",
+            "content": "@@ -94,24 +94,22 @@\n  := \n-range resultados\n+0; i %3C 15; i++\n  %7B%0A%09\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-07_18-31-18",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar mm, nn int\n\tresultados := [15][2]int{}\n\n\tfor i := range resultados {\n\t\tfmt.Scan(&mm, &nn)\n\t\tresultados[i][0] = mm\n\t\tresultados[i][1] = nn\n\t}\n\tcampeao := resultadoJogos(resultados)\n\tfmt.Println(campeao)\n}\n\nfunc resultadoJogos(resultados [15][2]int) string {\n\tfila := NewQueue[string]()\n\tfila.Enqueue(\"A\")\n\tfila.Enqueue(\"B\")\n\tfila.Enqueue(\"C\")\n\tfila.Enqueue(\"D\")\n\tfila.Enqueue(\"E\")\n\tfila.Enqueue(\"F\")\n\tfila.Enqueue(\"G\")\n\tfila.Enqueue(\"H\")\n\tfila.Enqueue(\"I\")\n\tfila.Enqueue(\"J\")\n\tfila.Enqueue(\"K\")\n\tfila.Enqueue(\"L\")\n\tfila.Enqueue(\"M\")\n\tfila.Enqueue(\"N\")\n\tfila.Enqueue(\"O\")\n\tfila.Enqueue(\"P\")\n\tindice := 0\n\tfor fila.Len() > 1 {\n\t\ttimeEsquerda := fila.Dequeue()\n\t\ttimeDireita := fila.Dequeue()\n\n\t\tmm, nn := resultados[indice][0], resultados[indice][1]\n\t\tindice++\n\t\tif mm > nn {\n\t\t\tfila.Enqueue(timeEsquerda)\n\t\t} else {\n\t\t\tfila.Enqueue(timeDireita)\n\t\t}\n\t}\n\treturn fila.Dequeue()\n}\n",
+            "lines": "50"
+        }
+    ]
+}

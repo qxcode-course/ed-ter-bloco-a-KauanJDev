@@ -22,10 +22,10 @@ expanded:
 - ed@linear
 flags:
   inbox: all
-  panel: skills
-  show_panel: 'true'
+  panel: graph
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@bufferring
-selected_index: 8
+selected: ed@chaves
+selected_index: 10

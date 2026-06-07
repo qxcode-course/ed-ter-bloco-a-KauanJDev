@@ -1,0 +1,38 @@
+2026-06-07 14:33:25, MOVE, v:1, k:ed@pilha, mode:DOWN
+2026-06-07 14:33:28, MOVE, v:1, k:ed@pilha, mode:PICK
+2026-06-07 14:42:53, EXEC, v:1, k:ed@pilha, mode:FULL, rate:0, size:103
+2026-06-07 14:43:40, EXEC, v:1, k:ed@pilha, mode:FULL, rate:0, size:103
+2026-06-07 14:44:20, EXEC, v:1, k:ed@pilha, mode:FULL, rate:0
+2026-06-07 14:45:28, EXEC, v:1, k:ed@pilha, mode:FULL, rate:33, size:100
+2026-06-07 14:49:32, EXEC, v:1, k:ed@pilha, mode:FULL, rate:33, size:113
+2026-06-07 15:00:14, EXEC, v:1, k:ed@pilha, mode:FULL, rate:33, size:121
+2026-06-07 15:00:51, EXEC, v:1, k:ed@pilha, mode:FULL, rate:66, size:121
+2026-06-07 15:03:01, EXEC, v:1, k:ed@pilha, mode:FULL, rate:0, size:125
+2026-06-07 15:03:26, EXEC, v:1, k:ed@pilha, mode:FULL, rate:66, size:125
+2026-06-07 15:03:44, EXEC, v:1, k:ed@pilha, mode:FULL, rate:100, size:125
+2026-06-07 15:03:55, MOVE, v:1, k:ed@pilha, mode:BACK
+2026-06-07 15:04:15, SELF, v:1, k:ed@pilha, self:1, rate:100, study:30
+2026-06-07 17:36:23, MOVE, v:1, k:ed@chaves, mode:DOWN
+2026-06-07 17:36:25, MOVE, v:1, k:ed@chaves, mode:PICK
+2026-06-07 17:42:44, EXEC, v:1, k:ed@chaves, mode:FULL, rate:0, size:57
+2026-06-07 17:43:09, EXEC, v:1, k:ed@chaves, mode:FULL, rate:0, size:58
+2026-06-07 17:47:27, EXEC, v:1, k:ed@chaves, mode:LOCK, rate:0, size:71
+2026-06-07 17:47:39, EXEC, v:1, k:ed@chaves, mode:LOCK, rate:0, size:74
+2026-06-07 17:49:18, EXEC, v:1, k:ed@chaves, mode:LOCK, rate:0, size:76
+2026-06-07 18:09:52, MOVE, v:1, k:ed@chaves, mode:BACK
+2026-06-07 18:17:33, MOVE, v:1, k:ed@chaves, mode:PICK
+2026-06-07 18:21:17, EXEC, v:1, k:ed@chaves, mode:LOCK, rate:0, size:90
+2026-06-07 18:22:12, EXEC, v:1, k:ed@chaves, mode:LOCK, rate:0, size:90
+2026-06-07 18:22:53, EXEC, v:1, k:ed@chaves, mode:LOCK, rate:0, size:90
+2026-06-07 18:24:20, EXEC, v:1, k:ed@chaves, mode:LOCK, rate:0, size:90
+2026-06-07 18:29:22, EXEC, v:1, k:ed@chaves, mode:LOCK, rate:0, size:94
+2026-06-07 18:29:46, EXEC, v:1, k:ed@chaves, mode:LOCK, rate:100, size:94
+2026-06-07 18:29:51, MOVE, v:1, k:ed@chaves, mode:BACK
+2026-06-07 18:30:14, MOVE, v:1, k:ed@chaves, mode:PICK
+2026-06-07 18:30:23, EXEC, v:1, k:ed@chaves, mode:LOCK, rate:100
+2026-06-07 18:30:28, EXEC, v:1, k:ed@chaves, mode:FULL, rate:100
+2026-06-07 18:30:34, MOVE, v:1, k:ed@chaves, mode:BACK
+2026-06-07 18:31:16, MOVE, v:1, k:ed@chaves, mode:PICK
+2026-06-07 18:31:18, EXEC, v:1, k:ed@chaves, mode:FULL, rate:100, size:94
+2026-06-07 18:31:19, MOVE, v:1, k:ed@chaves, mode:BACK
+2026-06-07 18:31:38, SELF, v:1, k:ed@chaves, self:1, rate:100, study:55

@@ -45,3 +45,19 @@
 2026-06-02 10:06:59, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:100
 2026-06-02 10:07:01, MOVE, v:1, k:ed@bufferring, mode:BACK
 2026-06-02 10:07:24, SELF, v:1, k:ed@bufferring, self:1, rate:100, study:80
+2026-06-02 20:17:54, MOVE, v:1, k:ed@bufferring, mode:PICK
+2026-06-02 20:17:54, MOVE, v:1, k:ed@bufferring, mode:BACK
+2026-06-02 20:19:17, SELF, v:1, k:ed@fractais_png, self:1, rate:100, study:420
+2026-06-02 20:19:25, SELF, v:1, k:ed@fractais_png, self:1, rate:100, study:420
+2026-06-02 20:22:35, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-06-02 20:27:08, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-06-02 20:27:21, MOVE, v:1, k:ed@mdc, mode:PICK
+2026-06-02 20:32:12, MOVE, v:1, k:ed@mdc, mode:BACK
+2026-06-02 20:32:14, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-06-02 21:02:50, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-06-02 21:03:20, MOVE, v:1, k:ed@mdc, mode:PICK
+2026-06-02 21:53:42, MOVE, v:1, k:ed@mdc, mode:BACK
+2026-06-02 21:54:14, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-06-02 22:44:31, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-06-02 22:45:18, MOVE, v:1, k:ed@editorint, mode:PICK
+2026-06-02 22:45:20, MOVE, v:1, k:ed@editorint, mode:BACK
