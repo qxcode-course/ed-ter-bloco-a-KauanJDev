@@ -12,3 +12,6 @@
 2026-06-08 11:25:16, EXEC, v:1, k:ed@queimando, mode:FULL, rate:100, size:105
 2026-06-08 11:25:20, MOVE, v:1, k:ed@queimando, mode:BACK
 2026-06-08 11:25:43, SELF, v:1, k:ed@queimando, self:1, rate:100, study:22
+2026-06-08 11:29:22, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-06-08 11:29:23, EXEC, v:1, k:ed@queimando, mode:FULL, rate:100, size:105
+2026-06-08 11:29:24, MOVE, v:1, k:ed@queimando, mode:BACK

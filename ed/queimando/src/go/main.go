@@ -10,8 +10,8 @@ type Pos struct {
 	l, c int
 }
 
-func getNeighbors(l, c int) [][]int {
-	return [][]int{
+func getNeighbors(l, c int) []Pos {
+	return []Pos{
 		{l - 1, c},
 		{l + 1, c},
 		{l, c - 1},
@@ -35,7 +35,7 @@ func burnTrees(grid [][]rune, l, c int) {
 		grid[pos.l][pos.c] = 'o'
 
 		for _, neighbor := range getNeighbors(pos.l, pos.c) {
-			stack.Push(Pos{neighbor[0], neighbor[1]})
+			stack.Push(neighbor)
 		}
 	}
 	// Essa função deve usar uma list como pilha
