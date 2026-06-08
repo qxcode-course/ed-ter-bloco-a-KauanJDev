@@ -1,0 +1,14 @@
+2026-06-08 11:02:26, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-06-08 11:02:37, EXEC, v:1, k:ed@queimando, mode:FULL, size:77, fail:COMP
+2026-06-08 11:02:39, MOVE, v:1, k:ed@queimando, mode:BACK
+2026-06-08 11:02:41, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-06-08 11:03:06, EXEC, v:1, k:ed@queimando, mode:FULL, fail:COMP
+2026-06-08 11:05:40, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-06-08 11:10:54, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-06-08 11:12:52, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-06-08 11:21:05, EXEC, v:1, k:ed@queimando, mode:FULL, size:100, fail:COMP
+2026-06-08 11:20:58, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-06-08 11:25:00, EXEC, v:1, k:ed@queimando, mode:FULL, rate:20, size:105
+2026-06-08 11:25:16, EXEC, v:1, k:ed@queimando, mode:FULL, rate:100, size:105
+2026-06-08 11:25:20, MOVE, v:1, k:ed@queimando, mode:BACK
+2026-06-08 11:25:43, SELF, v:1, k:ed@queimando, self:1, rate:100, study:22
