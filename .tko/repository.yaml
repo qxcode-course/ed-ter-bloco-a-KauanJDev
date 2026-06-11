@@ -19,13 +19,13 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@linear
+- ed@tree
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@queimando
-selected_index: 11
+selected: ed@map_set
+selected_index: 2
