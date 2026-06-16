@@ -14,48 +14,16 @@ type Node struct {
 	Right *Node
 }
 
-func (node *Node) insert(value int) {
-	if value == node.Value {
-		return
-	}
-
-	if value < node.Value {
-		if node.Left == nil {
-			node.Left = &Node{Value: value}
-		} else {
-			node.Left.insert(value)
-		}
-	} else {
-		if node.Right == nil {
-			node.Right = &Node{Value: value}
-		} else {
-			node.Right.insert(value)
-		}
-	}
-}
-
 func BstInsert(values []int) *Node {
-	if len(values) == 0 {
-		return nil
-	}
-	node := &Node{Value: values[0]}
-	for _, value := range values[1:] {
-		node.insert(value)
-	}
-	return node
+	// TODO
+	_ = values
+	return nil
 }
 
-// Dica: crie um vetor compartilhado e vá preenchendo conforme anda na recursão
-// Depois use o strings.Join para gerar o serial
-func Serialize(root *Node) string {
-	if root == nil {
-		return "#"
-	}
-	vector := []string{strconv.Itoa(root.Value)}
-	vector = append(vector, Serialize(root.Left))
-	vector = append(vector, Serialize(root.Right))
-
-	return strings.Join(vector, " ")
+func BstRemove(node *Node, value int) *Node {
+	// TODO
+	_, _ = node, value
+	return nil
 }
 
 // -----------------------------------------------------------------------------------
@@ -98,7 +66,14 @@ func main() {
 			values = append(values, v)
 		}
 	}
+	scanner.Scan()
+	toRemove, _ := strconv.Atoi(scanner.Text())
+
+	_ = toRemove // Ignora o valor a ser removido, pois não está implementado
 	root := BstInsert(values)
+	fmt.Println("original:")
 	BShow(root, "") // Chama a função de impressão formatada
-	fmt.Println(Serialize((root)))
+	root = BstRemove(root, toRemove)
+	fmt.Println("modificado:")
+	BShow(root, "") // Chama a função de impressão formatada da árvore modificada
 }

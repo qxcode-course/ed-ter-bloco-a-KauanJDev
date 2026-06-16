@@ -43,3 +43,11 @@
 2026-06-16 10:42:21, EXEC, v:1, k:ed@bst_serial, mode:FULL, rate:0, size:108
 2026-06-16 10:42:14, MOVE, v:1, k:ed@bst_serial, mode:EDIT
 2026-06-16 10:47:45, MOVE, v:1, k:ed@bst_serial, mode:BACK
+2026-06-16 14:25:54, MOVE, v:1, k:ed@bst_serial, mode:PICK
+2026-06-16 14:27:39, EXEC, v:1, k:ed@bst_serial, mode:FULL, rate:0, size:103
+2026-06-16 14:28:05, EXEC, v:1, k:ed@bst_serial, mode:FULL, rate:66, size:104
+2026-06-16 14:29:02, EXEC, v:1, k:ed@bst_serial, mode:FULL, rate:100, size:104
+2026-06-16 14:29:04, MOVE, v:1, k:ed@bst_serial, mode:BACK
+2026-06-16 14:29:15, SELF, v:1, k:ed@bst_serial, self:1, rate:100, study:36
+2026-06-16 14:29:24, MOVE, v:1, k:ed@bst_remove, mode:DOWN
+2026-06-16 14:29:59, SELF, v:1, k:ed@editorint, self:1, rate:90, study:130

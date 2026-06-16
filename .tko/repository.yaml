@@ -19,10 +19,11 @@ sources:
   writeable: false
   quests: null
 expanded:
+- ed@list
 - ed@tree
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   task_graph_mode: executions
   show_time: 'true'
 audit:
@@ -31,5 +32,5 @@ audit:
 audit_enabled: true
 audit_interval_seconds: null
 lang: go
-selected: ed@bst_serial
-selected_index: 18
+selected: ed@list
+selected_index: 5
