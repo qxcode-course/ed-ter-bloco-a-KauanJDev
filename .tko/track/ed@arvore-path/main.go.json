@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-15_14-15-08",
+            "content": "@@ -609,16 +609,18 @@\n h%0A%09//%7D%0A%09\n+//\n return %22\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-06-15_14-15-16",
+            "content": "@@ -438,11 +438,17 @@\n urn \n-%22x%22\n+rightPath\n %0A%09%7D%0A\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-06-15_14-15-40",
+            "content": "@@ -355,16 +355,58 @@\n n %22!%22%0A%09%7D\n+%0A%09rightPath := findPath(node.Right, value)\n %0A%0A%09if no\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-06-15_14-15-47",
+            "content": "@@ -360,188 +360,46 @@\n %0A%09%7D%0A\n-%09left := findPath(node.Left, value)%0A%09right := findPath(node.Right, value)%0A%09if node.Value == value %7B%0A%09%09return %22x%22%0A%09%7D%0A%09if left != %22!%22 %7B%0A%09%09return %22l%22%0A%09%7D%0A%09if right != %22!%22 %7B%0A%09%09return %22r\n+%0A%09if node.Value == value %7B%0A%09%09return %22x\n %22%0A%09%7D\n",
+            "lines": "95"
+        },
+        {
+            "label": "2026-06-15_14-17-46",
+            "content": "@@ -326,19 +326,8 @@\n g %7B%0A\n-%09str := %22%22%0A\n %09if \n@@ -340,16 +340,16 @@\n = nil %7B%0A\n+\n %09%09return\n@@ -458,22 +458,22 @@\n lue %7B%0A%09%09\n-str +=\n+return\n  %22x%22%0A%09%7D%0A\n@@ -492,22 +492,22 @@\n %22!%22 %7B%0A%09%09\n-str +=\n+return\n  %22l%22%0A%09%7D%0A\n@@ -531,14 +531,14 @@\n %7B%0A%09%09\n-str +=\n+return\n  %22r%22\n@@ -706,51 +706,8 @@\n //%7D%0A\n-%09if len(str) %3E 0 %7B%0A%09%09return str%0A%09%7D else %7B%0A%09\n %09ret\n@@ -718,12 +718,8 @@\n %22!%22%0A\n-%09%7D%0A%0A\n %7D%0A%0A/\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-15_14-21-17",
+            "content": "@@ -437,24 +437,66 @@\n ght, value)%0A\n+%09if node.Value == value %7B%0A%09%09str += %22x%22%0A%09%7D%0A\n %09if left != \n@@ -549,24 +549,26 @@\n  += %22r%22%0A%09%7D%0A%09\n+//\n if node.Valu\n@@ -577,37 +577,154 @@\n == value %7B%0A%09\n-%09str += %22x%22%0A%09\n+//%09return %22%22%0A%09//%7D%0A%0A%09//if leftPath != %22!%22 %7B%0A%09//%09return %22l%22 + leftPath%0A%09//%7D%0A%0A%09//if rightPath != %22!%22 %7B%0A%09//%09return %22r%22 + rightPath%0A%09//\n %7D%0A%09if len(st\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-06-15_14-22-09",
+            "content": "@@ -322,16 +322,27 @@\n tring %7B%0A\n+%09str := %22%22%0A\n %09if node\n@@ -465,25 +465,18 @@\n %7B%0A%09%09\n-return %22l%22 + left\n+str += %22l%22\n %0A%09%7D%0A\n@@ -500,26 +500,18 @@\n %7B%0A%09%09\n-return %22r%22 + right\n+str += %22r%22\n %0A%09%7D%0A\n@@ -542,22 +542,65 @@\n %7B%0A%09%09\n-return %22x%22%0A%09%7D%0A\n+str += %22x%22%0A%09%7D%0A%09if len(str) %3E 0 %7B%0A%09%09return str%0A%09%7D else %7B%0A%09\n %09ret\n@@ -607,16 +607,20 @@\n urn %22!%22%0A\n+%09%7D%0A%0A\n %7D%0A%0A// --\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-06-15_14-24-35",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\n// retorne o caminho at\u00e9 o n\u00f3 ou ! se n\u00e3o existir\n// voc\u00ea pode fazer recursivo ou interativo\n// tamb\u00e9m pode criar fun\u00e7\u00f5es auxiliares se achar necess\u00e1rio\nfunc findPath(node *Node, value int) string {\n\tif node == nil {\n\t\treturn \"!\"\n\t}\n\tleft := findPath(node.Left, value)\n\tright := findPath(node.Right, value)\n\tif left != \"!\" {\n\t\treturn \"l\" + left\n\t}\n\tif right != \"!\" {\n\t\treturn \"r\" + right\n\t}\n\tif node.Value == value {\n\t\treturn \"x\"\n\t}\n\treturn \"!\"\n}\n\n// ----------------------------------------------------------------------------------\nfunc BShow(node *Node, heranca string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, heranca+\"l\")\n\t}\n\tfor i := 0; i < len(heranca)-1; i++ {\n\t\tif heranca[i] != heranca[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif heranca != \"\" {\n\t\tif heranca[len(heranca)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, heranca+\"r\")\n\t}\n}\n\nfunc create(parts *[]string) *Node {\n\telem := (*parts)[0]\n\t*parts = (*parts)[1:]\n\tif elem == \"#\" {\n\t\treturn nil\n\t}\n\tvalue, _ := strconv.Atoi(elem)\n\tnode := &Node{Value: value}\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\treturn node\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\troot := create(&parts)\n\tfmt.Println(\"Arvore:\")\n\tBShow(root, \"\") // Chama a fun\u00e7\u00e3o de impress\u00e3o formatada\n\tfmt.Println(\"Caminho:\", findPath(root, value))\n}\n",
+            "lines": "91"
+        }
+    ]
+}

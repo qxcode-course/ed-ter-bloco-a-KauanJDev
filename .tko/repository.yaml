@@ -22,10 +22,10 @@ expanded:
 - ed@tree
 flags:
   inbox: all
-  panel: graph
+  panel: logs
   show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@map_set
-selected_index: 2
+selected: ed@bfs
+selected_index: 21
