@@ -22,10 +22,14 @@ expanded:
 - ed@tree
 flags:
   inbox: all
-  panel: logs
-  show_panel: 'false'
+  panel: skills
   task_graph_mode: executions
   show_time: 'true'
+audit:
+  enabled: true
+  interval_seconds: null
+audit_enabled: true
+audit_interval_seconds: null
 lang: go
-selected: ed@bfs
-selected_index: 21
+selected: ed@bst_serial
+selected_index: 18
