@@ -1,0 +1,19 @@
+2026-06-17 10:23:54, MOVE, v:1, k:ed@bst_remove, mode:PICK
+2026-06-17 10:24:24, MOVE, v:1, k:ed@bst_remove, mode:BACK
+2026-06-17 12:15:47, MOVE, v:1, k:ed@bst_remove, mode:PICK
+2026-06-17 12:15:48, EXEC, v:1, k:ed@bst_remove, mode:FULL, rate:12, size:102
+2026-06-17 12:16:16, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-17 12:22:09, MOVE, v:1, k:ed@bst_remove, mode:BACK
+2026-06-17 12:25:04, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-17 12:33:15, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-17 12:54:14, MOVE, v:1, k:ed@bst_remove, mode:PICK
+2026-06-17 12:54:20, EXEC, v:1, k:ed@bst_remove, mode:FULL, size:125, fail:COMP
+2026-06-17 12:53:55, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-17 12:59:48, EXEC, v:1, k:ed@bst_remove, mode:FULL, size:138, fail:COMP
+2026-06-17 13:00:21, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-17 13:03:30, EXEC, v:1, k:ed@bst_remove, mode:FULL, size:138, fail:COMP
+2026-06-17 13:03:29, MOVE, v:1, k:ed@bst_remove, mode:EDIT
+2026-06-17 13:06:30, MOVE, v:1, k:ed@bst_remove, mode:BACK
+2026-06-17 13:07:46, MOVE, v:1, k:ed@bst_remove, mode:PICK
+2026-06-17 13:08:33, EXEC, v:1, k:ed@bst_remove, mode:FULL, rate:12, size:138
+2026-06-17 13:08:53, MOVE, v:1, k:ed@bst_remove, mode:BACK
