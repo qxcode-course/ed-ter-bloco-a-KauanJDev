@@ -76,10 +76,20 @@ func BstRemove(node *Node, value int) *Node {
 		return nil
 	}
 	if value < node.Value {
-		BstRemove(node.Left, value)
+		node.Left = BstRemove(node.Left, value)
+	} else if value > node.Value {
+		node.Right = BstRemove(node.Right, value)
 	} else {
-		if value > node.Value {
-			BstRemove(node.Right, value)
+		if node.Left != nil && node.Right != nil {
+			aux := MaiorDireita(node.Left)
+			node.Value = aux.Value
+			node.Left = BstRemove(node.Left, aux.Value)
+		} else if node.Left != nil {
+			node = node.Left
+		} else if node.Right != nil {
+			node = node.Right
+		} else {
+			return nil
 		}
 	}
 	return node
