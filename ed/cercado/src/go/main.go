@@ -41,16 +41,17 @@ func solve(board [][]byte) {
 }
 
 func (p Point) dfs(board [][]byte, i, j int, visited map[Point]bool, cols int) {
-	if i < 0 || i >= len(board) || j < 0 || j >= cols || board[i][j] != 'O' || visited[p] {
+	pos := Point{x: i, y: j}
+	if i < 0 || i >= len(board) || j < 0 || j >= cols || board[i][j] != 'O' || visited[pos] {
 		return
 	}
 
-	visited[p] = true
+	visited[pos] = true
 
-	p.dfs(board, i+1, j, visited, cols)
-	p.dfs(board, i-1, j, visited, cols)
-	p.dfs(board, i, j+1, visited, cols)
-	p.dfs(board, i, j-1, visited, cols)
+	pos.dfs(board, i+1, j, visited, cols)
+	pos.dfs(board, i-1, j, visited, cols)
+	pos.dfs(board, i, j+1, visited, cols)
+	pos.dfs(board, i, j-1, visited, cols)
 }
 
 // NÃO ALTERE A MAIN

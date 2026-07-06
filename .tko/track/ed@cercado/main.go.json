@@ -62,7 +62,22 @@
         },
         {
             "label": "2026-05-26_17-17-57",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Point struct {\n\tx, y int\n}\n\nfunc (p Point) NewPoint() Point {\n\treturn Point{x: p.x, y: p.y}\n}\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]byte) {\n\tif len(board) == 0 {\n\t\treturn\n\t}\n\tvisited := make(map[Point]bool)\n\trows := len(board)\n\tcols := len(board[0])\n\tfor i := 0; i < len(board); i++ {\n\t\tfor j := 0; j < cols; j++ {\n\t\t\tif (i == 0 || i == rows-1 || j == 0 || j == cols-1) && board[i][j] == 'O' {\n\t\t\t\tp := Point{x: i, y: j}\n\t\t\t\tp.dfs(board, i, j, visited, cols)\n\t\t\t}\n\t\t}\n\t}\n\n\tfor i := 0; i < rows; i++ {\n\t\tfor j := 0; j < cols; j++ {\n\t\t\tif !visited[Point{i, j}] && board[i][j] == 'O' {\n\t\t\t\tboard[i][j] = 'X'\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunc (p Point) dfs(board [][]byte, i, j int, visited map[Point]bool, cols int) {\n\tp = Point{x: i, y: j}\n\tif i < 0 || i >= len(board) || j < 0 || j >= cols || board[i][j] != 'O' || visited[p] {\n\t\treturn\n\t}\n\n\tvisited[p] = true\n\n\tp.dfs(board, i+1, j, visited, cols)\n\tp.dfs(board, i-1, j, visited, cols)\n\tp.dfs(board, i, j+1, visited, cols)\n\tp.dfs(board, i, j-1, visited, cols)\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]byte, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "content": "@@ -544,16 +544,17 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%0A\n %09for i :\n@@ -608,34 +608,8 @@\n + %7B%0A\n-%09%09%09p := Point%7Bx: i, y: j%7D%0A\n %09%09%09i\n@@ -619,17 +619,27 @@\n visited%5B\n-p\n+Point%7Bi, j%7D\n %5D && boa\n@@ -770,24 +770,47 @@\n cols int) %7B%0A\n+%09p = Point%7Bx: i, y: j%7D%0A\n %09if i %3C 0 %7C%7C\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-07-06_10-26-56",
+            "content": "@@ -793,34 +793,8 @@\n ) %7B%0A\n-%09pos := Point%7Bx: i, y: j%7D%0A\n %09if \n@@ -901,18 +901,16 @@\n isited%5Bp\n-os\n %5D = true\n@@ -913,18 +913,16 @@\n true%0A%0A%09p\n-os\n .dfs(boa\n@@ -942,34 +942,32 @@\n isited, cols)%0A%09p\n-os\n .dfs(board, i-1,\n@@ -979,34 +979,32 @@\n isited, cols)%0A%09p\n-os\n .dfs(board, i, j\n@@ -1024,18 +1024,16 @@\n cols)%0A%09p\n-os\n .dfs(boa\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-07-06_10-30-19",
+            "content": "@@ -900,18 +900,16 @@\n isited%5Bp\n-os\n %5D %7B%0A%09%09re\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-07-06_10-36-14",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Point struct {\n\tx, y int\n}\n\nfunc (p Point) NewPoint() Point {\n\treturn Point{x: p.x, y: p.y}\n}\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]byte) {\n\tif len(board) == 0 {\n\t\treturn\n\t}\n\tvisited := make(map[Point]bool)\n\trows := len(board)\n\tcols := len(board[0])\n\tfor i := 0; i < len(board); i++ {\n\t\tfor j := 0; j < cols; j++ {\n\t\t\tif (i == 0 || i == rows-1 || j == 0 || j == cols-1) && board[i][j] == 'O' {\n\t\t\t\tp := Point{x: i, y: j}\n\t\t\t\tp.dfs(board, i, j, visited, cols)\n\t\t\t}\n\t\t}\n\t}\n\tfor i := 0; i < rows; i++ {\n\t\tfor j := 0; j < cols; j++ {\n\t\t\tp := Point{x: i, y: j}\n\t\t\tif !visited[p] && board[i][j] == 'O' {\n\t\t\t\tboard[i][j] = 'X'\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunc (p Point) dfs(board [][]byte, i, j int, visited map[Point]bool, cols int) {\n\tpos := Point{x: i, y: j}\n\tif i < 0 || i >= len(board) || j < 0 || j >= cols || board[i][j] != 'O' || visited[pos] {\n\t\treturn\n\t}\n\n\tvisited[pos] = true\n\n\tpos.dfs(board, i+1, j, visited, cols)\n\tpos.dfs(board, i-1, j, visited, cols)\n\tpos.dfs(board, i, j+1, visited, cols)\n\tpos.dfs(board, i, j-1, visited, cols)\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]byte, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
             "lines": "72"
         }
     ]

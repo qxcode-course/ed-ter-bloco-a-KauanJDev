@@ -10,10 +10,6 @@ type Pos struct {
 	l, c int
 }
 
-func (p Pos) NewPos() Pos {
-	return Pos{l: p.l, c: p.c}
-}
-
 // Não modifique a assinatura da função numIslands
 // Ela é a função que será chamada no LeetCode para resolver o problema
 func numIslands(grid [][]byte) int {
