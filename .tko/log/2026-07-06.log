@@ -21,3 +21,6 @@
 2026-07-06 10:36:34, MOVE, v:1, k:ed@pintura, mode:PICK
 2026-07-06 10:36:36, EXEC, v:1, k:ed@pintura, mode:FULL, rate:100
 2026-07-06 10:36:37, MOVE, v:1, k:ed@pintura, mode:BACK
+2026-07-06 17:56:33, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-07-06 17:56:34, EXEC, v:1, k:ed@caminho, mode:FULL, rate:100
+2026-07-06 17:56:35, MOVE, v:1, k:ed@caminho, mode:BACK

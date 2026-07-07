@@ -16,21 +16,19 @@ func main() {
 			fmt.Print(num, "")
 		}
 		fmt.Println()
-	} else {
-		fmt.Println("deu ruim")
 	}
 }
 
 func entrada(s string) []int {
-    sequencia := make([]int, len(s))
-    for i, c := range s {
-        if c == '.' {
-            sequencia[i] = -1
-        } else {
-            sequencia[i], _ = strconv.Atoi(string(c))
-        }
-    }
-    return sequencia
+	sequencia := make([]int, len(s))
+	for i, c := range s {
+		if c == '.' {
+			sequencia[i] = -1
+		} else {
+			sequencia[i], _ = strconv.Atoi(string(c))
+		}
+	}
+	return sequencia
 }
 
 func posicaoValida(sequencia []int, index, num, distanciaMinima int) bool {
